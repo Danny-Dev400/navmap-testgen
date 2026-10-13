@@ -1,0 +1,14 @@
+{
+  "id": "base-inventory-html__open-side-menu__inventory-html",
+  "title": "Open side menu",
+  "status": "approved",
+  "origin": "baseline",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__open-side-menu__inventory-html"
+    }
+  ],
+  "createdAt": "2026-10-06T19:53:41.187Z",
+  "updatedAt": "2026-10-06T19:53:41.187Z"
+}

@@ -1,0 +1,198 @@
+{
+  "states": [
+    {
+      "id": "cart-must-contain-at-least-1-item",
+      "title": "Cart must contain at least 1 item",
+      "kind": "persistent",
+      "flow": [
+        {
+          "edgeId": "inventory-html__add-item-to-cart__inventory-html"
+        }
+      ],
+      "perItem": true,
+      "note": "Converted from a precondition link: Adding an item on the products page puts it in the session-held cart, which survives navigation to the cart page.",
+      "origin": "migrated",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:16:07.313Z"
+    },
+    {
+      "id": "side-menu-must-be-open",
+      "title": "Side menu must be open",
+      "kind": "transient",
+      "flow": [
+        {
+          "edgeId": "inventory-html__open-side-menu__inventory-html"
+        }
+      ],
+      "note": "Converted from a precondition link: Opening the burger menu is what makes the side menu visible.",
+      "origin": "migrated",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:16:07.313Z"
+    },
+    {
+      "id": "dynamic-catalog-submenu-must-be-expanded",
+      "title": "Dynamic Catalog submenu must be expanded",
+      "kind": "transient",
+      "flow": [
+        {
+          "edgeId": "inventory-html__expand-dynamic-catalog-submenu__inventory-html"
+        }
+      ],
+      "note": "Converted from a precondition link: Clicking the Dynamic Catalog menu button reveals the Lazy Load submenu entry; its own menu-open prerequisite is expanded recursively.",
+      "origin": "migrated",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:16:07.313Z"
+    },
+    {
+      "id": "a-validation-error-must-be-displayed",
+      "title": "A validation error must be displayed",
+      "kind": "transient",
+      "flow": [
+        {
+          "edgeId": "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html"
+        }
+      ],
+      "note": "Converted from a precondition link: Clicking Continue with all fields empty raises the validation error banner without navigating; its own cart precondition is expanded recursively.",
+      "origin": "migrated",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:16:07.313Z"
+    },
+    {
+      "id": "shipping-information-must-have-been-submitted",
+      "title": "Shipping information must have been submitted",
+      "kind": "persistent",
+      "flow": [
+        {
+          "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html"
+        }
+      ],
+      "note": "The linker found no recorded action that produces it: The only producing action is 'Submit shipping information', but it needs First Name, Last Name and Zip filled in first and no fill actions were recorded; chaining the bare Continue click would fail validation.",
+      "origin": "answer",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:17:57.972Z"
+    },
+    {
+      "id": "the-product-must-not-already-be-in-the-cart",
+      "title": "The product must not already be in the cart",
+      "kind": "initial",
+      "note": "The linker found no recorded action that produces it: This is the default state of a fresh session; no recorded action produces it, and the only way to restore it (a Remove action) first needs the same specific product in the cart.",
+      "origin": "answer",
+      "createdAt": "2026-10-07T15:16:07.313Z",
+      "updatedAt": "2026-10-07T15:17:18.664Z"
+    }
+  ],
+  "bindings": [
+    {
+      "edgeId": "cart-html__start-checkout__checkout-step-one-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-two-html__finish-order__checkout-complete-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-two-html__finish-order__checkout-complete-html",
+      "precondition": "shipping information must have been submitted",
+      "stateId": "shipping-information-must-have-been-submitted"
+    },
+    {
+      "edgeId": "inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "stateId": "dynamic-catalog-submenu-must-be-expanded"
+    },
+    {
+      "edgeId": "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "stateId": "dynamic-catalog-submenu-must-be-expanded"
+    },
+    {
+      "edgeId": "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "stateId": "dynamic-catalog-submenu-must-be-expanded"
+    },
+    {
+      "edgeId": "dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "inventory-html__open-about-page__inventory-html",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "inventory-html__log-out__home",
+      "precondition": "side menu must be open",
+      "stateId": "side-menu-must-be-open"
+    },
+    {
+      "edgeId": "cart-html__remove-item-from-cart__cart-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item",
+      "sameItem": true
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-one-html__dismiss-form-error__checkout-step-one-html",
+      "precondition": "a validation error must be displayed",
+      "stateId": "a-validation-error-must-be-displayed"
+    },
+    {
+      "edgeId": "checkout-step-one-html__cancel-checkout-information__cart-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-two-html__cancel-checkout-overview__inventory-html",
+      "precondition": "cart must contain at least 1 item",
+      "stateId": "cart-must-contain-at-least-1-item"
+    },
+    {
+      "edgeId": "checkout-step-two-html__cancel-checkout-overview__inventory-html",
+      "precondition": "shipping information must have been submitted",
+      "stateId": "shipping-information-must-have-been-submitted"
+    },
+    {
+      "edgeId": "inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html",
+      "precondition": "the product must not already be in the cart",
+      "stateId": "the-product-must-not-already-be-in-the-cart"
+    },
+    {
+      "edgeId": "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html",
+      "precondition": "the product must already be in the cart",
+      "stateId": "cart-must-contain-at-least-1-item"
+    }
+  ],
+  "updatedAt": "2026-10-07T15:25:19.625Z"
+}

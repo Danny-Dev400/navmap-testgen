@@ -1,0 +1,32 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.env
+*.pem
+*.log
+
+# Everything for a project lives in projects/<id>/. Committed: navmap.json, users.json,
+# settings.json, precondition-links.json. Everything below is generated, local, or secret.
+projects/*/screenshots/
+projects/*/snapshots/
+projects/*/triage/
+projects/*/reports/
+projects/*/tests/
+projects/*/test-results/
+projects/*/.auth/
+projects/*/credentials/
+projects/*/.staging/
+projects/*/explore/
+projects/*/runs/
+projects/*/agent-usage.jsonl
+
+# Legacy top-level credentials files from before projects/ (anything left there is unreferenced).
+credentials/
+
+# Local tooling / secrets
+.playwright-mcp/
+.claude/settings.local.json
+.env.*
+!.env.example
+credentials.json

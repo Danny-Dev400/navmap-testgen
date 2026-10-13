@@ -1,0 +1,6 @@
+{
+  "destructive": {
+    "inventory-html__add-item-to-cart__inventory-html": false,
+    "inventory-html__sort-products__inventory-html": false
+  }
+}

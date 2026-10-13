@@ -1,0 +1,231 @@
+{
+  "id": "the-internet-herokuapp-com",
+  "targetHost": "the-internet.herokuapp.com",
+  "createdAt": "2026-10-06T05:30:30.000Z",
+  "updatedAt": "2026-10-06T05:32:10.000Z",
+  "totalRunsMerged": 1,
+  "runHistory": [
+    {
+      "runId": "R2-tsL3xQnsQpXiuCpZXI",
+      "mergedAt": "2026-10-06T05:32:10.000Z",
+      "pagesTouched": 3,
+      "edgesTouched": 4
+    }
+  ],
+  "pages": {
+    "home": {
+      "id": "home",
+      "urlPattern": "/",
+      "title": "Home Index (Available Examples)",
+      "sampleUrls": [
+        "https://the-internet.herokuapp.com/"
+      ],
+      "notes": "Index of ~40 example sub-pages (Form Authentication, Checkboxes, etc.), only the Form Authentication link was walked this run. Browser console reports errors on every page (not investigated).",
+      "firstSeenAt": "2026-10-06T05:30:31.000Z",
+      "lastVerifiedAt": "2026-10-06T05:30:47.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    },
+    "login": {
+      "id": "login",
+      "urlPattern": "/login",
+      "title": "Login Page",
+      "requiresAuth": false,
+      "sampleUrls": [
+        "https://the-internet.herokuapp.com/login"
+      ],
+      "notes": "Username/password form. Page text discloses the demo credentials. Errors and logout confirmation are shown in a dismissible #flash banner above the content; the page URL stays /login after a failed attempt.",
+      "group": "Form Authentication",
+      "firstSeenAt": "2026-10-06T05:30:47.000Z",
+      "lastVerifiedAt": "2026-10-06T05:32:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    },
+    "secure": {
+      "id": "secure",
+      "urlPattern": "/secure",
+      "title": "Secure Area",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://the-internet.herokuapp.com/secure"
+      ],
+      "notes": "Post-login landing page with a success flash banner and a single Logout link.",
+      "group": "Form Authentication",
+      "firstSeenAt": "2026-10-06T05:31:17.000Z",
+      "lastVerifiedAt": "2026-10-06T05:31:17.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    }
+  },
+  "edges": {
+    "home__open-form-authentication-page-from-home-index__login": {
+      "id": "home__open-form-authentication-page-from-home-index__login",
+      "fromPageId": "home",
+      "toPageId": "login",
+      "semanticIntent": "Open Form Authentication page from home index",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Form Authentication link",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Form Authentication"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL path is /login",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Heading 'Login Page' is visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/the-internet-herokuapp-com/screenshots/home__open-form-authentication-page-from-home-index__login.png",
+      "screenshotBefore": "projects/the-internet-herokuapp-com/screenshots/home__open-form-authentication-page-from-home-index__login.before.png",
+      "firstSeenAt": "2026-10-06T05:30:47.000Z",
+      "lastVerifiedAt": "2026-10-06T05:30:47.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    },
+    "login__submit-login-form-with-invalid-credentials__login": {
+      "id": "login__submit-login-form-with-invalid-credentials__login",
+      "fromPageId": "login",
+      "toPageId": "login",
+      "semanticIntent": "Submit login form with invalid credentials",
+      "intentCategory": "form_submit",
+      "action": "click",
+      "target": "Login button",
+      "inputValue": "unknown username with an incorrect password",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Login"
+      },
+      "preconditions": [
+        "User is logged out and on the login page"
+      ],
+      "postconditions": [
+        {
+          "description": "Flash banner shows 'Your username is invalid!'",
+          "assertionType": "text_visible"
+        },
+        {
+          "description": "URL path remains /login",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/the-internet-herokuapp-com/screenshots/login__submit-login-form-with-invalid-credentials__login.png",
+      "screenshotBefore": "projects/the-internet-herokuapp-com/screenshots/login__submit-login-form-with-invalid-credentials__login.before.png",
+      "firstSeenAt": "2026-10-06T05:31:03.000Z",
+      "lastVerifiedAt": "2026-10-06T05:31:03.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    },
+    "login__log-in-with-valid-credentials__secure": {
+      "id": "login__log-in-with-valid-credentials__secure",
+      "fromPageId": "login",
+      "toPageId": "secure",
+      "semanticIntent": "Log in with valid credentials",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "Login button",
+      "inputValue": "valid username and password from credentials file",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Login"
+      },
+      "authFormLocators": {
+        "username": {
+          "strategy": "role",
+          "role": "textbox",
+          "name": "Username"
+        },
+        "password": {
+          "strategy": "role",
+          "role": "textbox",
+          "name": "Password"
+        }
+      },
+      "preconditions": [
+        "User is logged out and on the login page"
+      ],
+      "postconditions": [
+        {
+          "description": "URL path is /secure",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Flash banner shows 'You logged into a secure area!'",
+          "assertionType": "text_visible"
+        },
+        {
+          "description": "Heading 'Secure Area' is visible",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/the-internet-herokuapp-com/screenshots/login__log-in-with-valid-credentials__secure.png",
+      "screenshotBefore": "projects/the-internet-herokuapp-com/screenshots/login__log-in-with-valid-credentials__secure.before.png",
+      "firstSeenAt": "2026-10-06T05:31:17.000Z",
+      "lastVerifiedAt": "2026-10-06T05:31:17.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    },
+    "secure__log-out-of-secure-area__login": {
+      "id": "secure__log-out-of-secure-area__login",
+      "fromPageId": "secure",
+      "toPageId": "login",
+      "semanticIntent": "Log out of secure area",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "Logout link",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Logout"
+      },
+      "preconditions": [
+        "User is logged in and on the secure area"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL path is /login",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Flash banner shows 'You logged out of the secure area!'",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "partial",
+      "screenshot": "projects/the-internet-herokuapp-com/screenshots/secure__log-out-of-secure-area__login.png",
+      "screenshotBefore": "projects/the-internet-herokuapp-com/screenshots/secure__log-out-of-secure-area__login.before.png",
+      "firstSeenAt": "2026-10-06T05:31:55.000Z",
+      "lastVerifiedAt": "2026-10-06T05:31:55.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "R2-tsL3xQnsQpXiuCpZXI"
+      ]
+    }
+  },
+  "entryPageId": "home",
+  "credentialsRef": "projects/the-internet-herokuapp-com/credentials/default.json"
+}

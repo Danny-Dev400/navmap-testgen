@@ -1,0 +1,34 @@
+{
+  "id": "case-the-product-added-from-the-catalog-appears-in-the-cart-with-",
+  "title": "The product added from the catalog appears in the cart with the same name",
+  "status": "approved",
+  "origin": "agent",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bike Light",
+      "capture": [
+        {
+          "element": "inventory-html#product-name",
+          "item": "Sauce Labs Bike Light",
+          "as": "addedName"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__open-cart__cart-html",
+      "verify": [
+        {
+          "element": "cart-html#cart-item-name",
+          "item": "Sauce Labs Bike Light",
+          "op": "equals",
+          "equalsVar": "addedName"
+        }
+      ]
+    }
+  ],
+  "notes": "Adds one product from the catalog, reads its name there, opens the cart and checks the cart line shows exactly that name (SHOP-1 / ac-1).",
+  "createdAt": "2026-10-08T04:14:35.428Z",
+  "updatedAt": "2026-10-08T04:17:30.779Z"
+}

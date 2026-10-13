@@ -1,0 +1,282 @@
+{
+  "features": [
+    {
+      "id": "authentication",
+      "title": "Authentication",
+      "description": "Signing in to and out of the store.",
+      "useCases": [
+        {
+          "id": "log-in",
+          "title": "Log in",
+          "description": "A shopper signs in with their credentials, and invalid or missing credentials are rejected with a clear error.",
+          "actions": [
+            "home__log-in-with-credentials__inventory-html",
+            "home__submit-login-with-invalid-credentials__home"
+          ],
+          "cases": [
+            "base-home__log-in-with-credentials__inventory-html",
+            "case-a-failed-login-attempt-does-not-prevent-a-valid-login-afterw",
+            "case-login-is-rejected-with-the-right-error",
+            "case-login-with-a-username-but-no-password-asks-for-a-password",
+            "case-login-with-an-empty-form-asks-for-a-username",
+            "case-login-with-unknown-credentials-is-rejected-with-an-error"
+          ]
+        },
+        {
+          "id": "log-out",
+          "title": "Log out",
+          "description": "A signed-in shopper ends their session and returns to the login page.",
+          "actions": [
+            "inventory-html__log-out__home"
+          ],
+          "cases": [
+            "base-inventory-html__log-out__home"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "product-catalog",
+      "title": "Product catalog",
+      "description": "Browsing the product list and looking at individual products.",
+      "useCases": [
+        {
+          "id": "sort-the-product-list",
+          "title": "Sort the product list",
+          "description": "A shopper reorders the products by name or price.",
+          "actions": [
+            "inventory-html__sort-products__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__sort-products__inventory-html"
+          ]
+        },
+        {
+          "id": "view-product-details",
+          "title": "View product details",
+          "description": "A shopper opens a product to see its details and goes back to the list.",
+          "actions": [
+            "inventory-html__open-product-detail__inventory-item-html",
+            "inventory-item-html__return-to-products-list__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__open-product-detail__inventory-item-html",
+            "base-inventory-item-html__return-to-products-list__inventory-html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shopping-cart",
+      "title": "Shopping cart",
+      "description": "Putting products in the cart and managing it before checkout.",
+      "useCases": [
+        {
+          "id": "add-a-product-to-the-cart",
+          "title": "Add a product to the cart",
+          "description": "A shopper puts a product in the cart from the catalog or a product page.",
+          "actions": [
+            "inventory-html__add-item-to-cart__inventory-html",
+            "inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html"
+          ],
+          "cases": [
+            "base-inventory-html__add-item-to-cart__inventory-html",
+            "base-inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html"
+          ]
+        },
+        {
+          "id": "remove-a-product-from-the-cart",
+          "title": "Remove a product from the cart",
+          "description": "A shopper takes a product out of the cart from the cart or a product page.",
+          "actions": [
+            "cart-html__remove-item-from-cart__cart-html",
+            "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html"
+          ],
+          "cases": [
+            "base-inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html",
+            "case-remove-the-bike-light-from-the-cart"
+          ]
+        },
+        {
+          "id": "review-the-cart",
+          "title": "Review the cart",
+          "description": "A shopper opens the cart to see what is in it and can go back to keep shopping.",
+          "actions": [
+            "inventory-html__open-cart__cart-html",
+            "inventory-item-html__open-cart__cart-html",
+            "cart-html__continue-shopping-from-cart__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__open-cart__cart-html",
+            "base-inventory-item-html__open-cart__cart-html",
+            "case-the-product-added-from-the-catalog-appears-in-the-cart-with-",
+            "case-every-product-added-from-the-catalog-appears-in-the-cart-und"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "checkout",
+      "title": "Checkout",
+      "description": "Turning the cart into an order: shipping information, overview and confirmation.",
+      "useCases": [
+        {
+          "id": "complete-a-purchase",
+          "title": "Complete a purchase",
+          "description": "A shopper buys a product end to end, from the cart to the order confirmation.",
+          "actions": [
+            "inventory-html__add-item-to-cart__inventory-html",
+            "inventory-html__open-cart__cart-html",
+            "cart-html__start-checkout__checkout-step-one-html",
+            "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+            "checkout-step-two-html__finish-order__checkout-complete-html",
+            "checkout-complete-html__return-to-products-after-order__inventory-html"
+          ],
+          "cases": [
+            "case-buy-a-bike-light-and-finish-checkout",
+            "base-cart-html__start-checkout__checkout-step-one-html",
+            "base-checkout-step-two-html__finish-order__checkout-complete-html",
+            "base-checkout-complete-html__return-to-products-after-order__inventory-html"
+          ]
+        },
+        {
+          "id": "enter-shipping-information",
+          "title": "Enter shipping information",
+          "description": "A shopper fills in the checkout form, and missing fields are flagged with an error they can dismiss.",
+          "actions": [
+            "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+            "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html",
+            "checkout-step-one-html__dismiss-form-error__checkout-step-one-html"
+          ],
+          "cases": [
+            "base-checkout-step-one-html__submit-shipping-information__checkout-step-two-html"
+          ]
+        },
+        {
+          "id": "review-the-order-before-paying",
+          "title": "Review the order before paying",
+          "description": "A shopper checks the checkout overview, where item prices and the item total should match the cart contents.",
+          "actions": [
+            "inventory-html__add-item-to-cart__inventory-html",
+            "inventory-html__open-cart__cart-html",
+            "cart-html__start-checkout__checkout-step-one-html",
+            "checkout-step-one-html__submit-shipping-information__checkout-step-two-html"
+          ],
+          "cases": [
+            "case-add-3-products-to-the-cart-and-go-to-the-checkout-resume",
+            "case-checkout-overview-prices-match-the-catalog-and-item-total-is"
+          ]
+        },
+        {
+          "id": "cancel-checkout",
+          "title": "Cancel checkout",
+          "description": "A shopper abandons checkout from the information or overview step.",
+          "actions": [
+            "checkout-step-one-html__cancel-checkout-information__cart-html",
+            "checkout-step-two-html__cancel-checkout-overview__inventory-html"
+          ],
+          "cases": []
+        }
+      ]
+    },
+    {
+      "id": "dynamic-catalog",
+      "title": "Dynamic catalog",
+      "description": "The demo catalog pages reached from the side menu: lazy load, spinner and slider.",
+      "useCases": [
+        {
+          "id": "open-the-dynamic-catalog-pages",
+          "title": "Open the dynamic catalog pages",
+          "description": "A shopper opens the Dynamic Catalog submenu and moves through the lazy load, spinner and slider pages.",
+          "actions": [
+            "inventory-html__open-side-menu__inventory-html",
+            "inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+            "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+            "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+            "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html"
+          ],
+          "cases": [
+            "base-inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+            "base-inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+            "base-dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+            "base-dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html"
+          ]
+        },
+        {
+          "id": "browse-products-in-the-slider",
+          "title": "Browse products in the slider",
+          "description": "A shopper steps through products in the slider page.",
+          "actions": [
+            "dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html"
+          ],
+          "cases": [
+            "base-dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html"
+          ]
+        },
+        {
+          "id": "return-to-all-items-from-the-dynamic-catalog",
+          "title": "Return to all items from the dynamic catalog",
+          "description": "A shopper leaves the dynamic catalog and goes back to the main product list through the menu.",
+          "actions": [
+            "dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html"
+          ],
+          "cases": [
+            "base-dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "site-menu",
+      "title": "Site menu",
+      "description": "The side menu available across the store.",
+      "useCases": [
+        {
+          "id": "open-the-side-menu",
+          "title": "Open the side menu",
+          "description": "A shopper opens the side menu to reach other parts of the app.",
+          "actions": [
+            "inventory-html__open-side-menu__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__open-side-menu__inventory-html"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "company-social-links",
+      "title": "Company & social links",
+      "description": "Links out to the company website and social media profiles.",
+      "useCases": [
+        {
+          "id": "visit-the-company-about-page",
+          "title": "Visit the company About page",
+          "description": "A shopper follows the About link from the side menu to the company website.",
+          "actions": [
+            "inventory-html__open-about-page__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__open-about-page__inventory-html"
+          ]
+        },
+        {
+          "id": "open-the-companys-social-pages",
+          "title": "Open the company's social pages",
+          "description": "A shopper follows the footer links to the company's X, Facebook and LinkedIn pages.",
+          "actions": [
+            "inventory-html__open-x-social-page__inventory-html",
+            "inventory-html__open-facebook-social-page__inventory-html",
+            "inventory-html__open-linkedin-social-page__inventory-html"
+          ],
+          "cases": [
+            "base-inventory-html__open-x-social-page__inventory-html",
+            "base-inventory-html__open-facebook-social-page__inventory-html",
+            "base-inventory-html__open-linkedin-social-page__inventory-html"
+          ]
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-10-08T04:14:35.465Z"
+}

@@ -1,0 +1,2039 @@
+{
+  "id": "www-saucedemo-com",
+  "targetHost": "www.saucedemo.com",
+  "createdAt": "2026-10-06T17:53:40.000Z",
+  "updatedAt": "2026-10-08T04:14:35.428Z",
+  "totalRunsMerged": 5,
+  "entryPageId": "home",
+  "credentialsRef": "projects/www-saucedemo-com/credentials/default.json",
+  "runHistory": [
+    {
+      "runId": "5sjgnxM4hSPchuL-0oyZw",
+      "mergedAt": "2026-10-06T17:58:00.000Z",
+      "pagesTouched": 10,
+      "edgesTouched": 22
+    },
+    {
+      "runId": "7iFpE0drTael7OkZPRxk2",
+      "mergedAt": "2026-10-06T22:22:00.000Z",
+      "pagesTouched": 3,
+      "edgesTouched": 6
+    },
+    {
+      "runId": "XsZufDlayr8m16XVlqQKo",
+      "mergedAt": "2026-10-06T22:34:00.000Z",
+      "pagesTouched": 4,
+      "edgesTouched": 4
+    },
+    {
+      "runId": "uge0-1inbPUZ1h6sv8q2g",
+      "mergedAt": "2026-10-07T02:34:00.000Z",
+      "pagesTouched": 0,
+      "edgesTouched": 1
+    },
+    {
+      "runId": "W09fFIy5HdRw4hj0PZ7f5",
+      "mergedAt": "2026-10-07T15:31:00.000Z",
+      "pagesTouched": 3,
+      "edgesTouched": 3
+    }
+  ],
+  "pages": {
+    "home": {
+      "id": "home",
+      "urlPattern": "/",
+      "title": "Login Page",
+      "sampleUrls": [
+        "https://www.saucedemo.com/"
+      ],
+      "anchor": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Login",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html": {
+      "id": "inventory-html",
+      "urlPattern": "/inventory.html",
+      "title": "Products Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/inventory.html"
+      ],
+      "anchor": {
+        "strategy": "text",
+        "text": "Products",
+        "exact": true
+      },
+      "elements": [
+        {
+          "id": "product-price",
+          "label": "Product price",
+          "locator": {
+            "strategy": "css",
+            "css": ".inventory_item_price"
+          },
+          "scope": {
+            "container": {
+              "strategy": "css",
+              "css": ".inventory_item"
+            },
+            "hasText": "Sauce Labs Backpack"
+          },
+          "valueKind": "currency",
+          "source": "browser",
+          "sample": "$29.99"
+        },
+        {
+          "id": "product-name",
+          "label": "Product name",
+          "locator": {
+            "strategy": "css",
+            "css": ".inventory_item_name"
+          },
+          "scope": {
+            "container": {
+              "strategy": "css",
+              "css": ".inventory_item"
+            },
+            "hasText": "Sauce Labs Bike Light"
+          },
+          "valueKind": "text",
+          "source": "browser",
+          "sample": "Sauce Labs Bike Light"
+        }
+      ],
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-item-html": {
+      "id": "inventory-item-html",
+      "urlPattern": "/inventory-item.html",
+      "title": "Product Detail Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/inventory-item.html?id=4"
+      ],
+      "notes": "The product is selected by the id query parameter; all ids share this one page. The primary button toggles between 'Add to cart' and 'Remove' in place and updates the cart badge.",
+      "anchor": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Back to products",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T22:31:56.000Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "XsZufDlayr8m16XVlqQKo"
+      ]
+    },
+    "cart-html": {
+      "id": "cart-html",
+      "urlPattern": "/cart.html",
+      "title": "Shopping Cart Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/cart.html"
+      ],
+      "anchor": {
+        "strategy": "text",
+        "text": "Your Cart",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T22:22:00.000Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "7iFpE0drTael7OkZPRxk2"
+      ],
+      "elements": [
+        {
+          "id": "cart-item-name",
+          "label": "Cart item name",
+          "locator": {
+            "strategy": "css",
+            "css": ".inventory_item_name"
+          },
+          "scope": {
+            "container": {
+              "strategy": "css",
+              "css": ".cart_item"
+            },
+            "hasText": "Sauce Labs Bike Light"
+          },
+          "valueKind": "text",
+          "source": "browser",
+          "sample": "Sauce Labs Bike Light"
+        }
+      ]
+    },
+    "checkout-step-one-html": {
+      "id": "checkout-step-one-html",
+      "urlPattern": "/checkout-step-one.html",
+      "title": "Checkout Information Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/checkout-step-one.html"
+      ],
+      "group": "Checkout",
+      "anchor": {
+        "strategy": "text",
+        "text": "Checkout: Your Information",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T22:22:00.000Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-step-two-html": {
+      "id": "checkout-step-two-html",
+      "urlPattern": "/checkout-step-two.html",
+      "title": "Checkout Overview Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/checkout-step-two.html"
+      ],
+      "group": "Checkout",
+      "anchor": {
+        "strategy": "text",
+        "text": "Checkout: Overview",
+        "exact": true
+      },
+      "elements": [
+        {
+          "id": "item-price",
+          "label": "Line item price",
+          "locator": {
+            "strategy": "css",
+            "css": ".inventory_item_price"
+          },
+          "scope": {
+            "container": {
+              "strategy": "css",
+              "css": ".cart_item"
+            },
+            "hasText": "Sauce Labs Backpack"
+          },
+          "valueKind": "currency",
+          "source": "browser",
+          "sample": "$29.99"
+        },
+        {
+          "id": "item-total",
+          "label": "Item total",
+          "locator": {
+            "strategy": "css",
+            "css": ".summary_subtotal_label"
+          },
+          "valueKind": "currency",
+          "source": "browser",
+          "sample": "Item total: $29.99"
+        }
+      ],
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T22:22:00.000Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-complete-html": {
+      "id": "checkout-complete-html",
+      "urlPattern": "/checkout-complete.html",
+      "title": "Order Confirmation Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/checkout-complete.html"
+      ],
+      "notes": "Also offers a 'Generate PDF order' button (not exercised).",
+      "group": "Checkout",
+      "anchor": {
+        "strategy": "role",
+        "role": "heading",
+        "name": "Thank you for your order!",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "dynamic-catalog-lazy-load-html": {
+      "id": "dynamic-catalog-lazy-load-html",
+      "urlPattern": "/dynamic-catalog-lazy-load.html",
+      "title": "Dynamic Catalog - Lazy Load Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/dynamic-catalog-lazy-load.html"
+      ],
+      "notes": "Products load progressively; four trailing 'Loading…' placeholders were still visible after ~3s. Product cards are read-only: clicking a card name does nothing, and there is no link to the product detail page and no add-to-cart. Names carry size suffixes such as (XS).",
+      "group": "Dynamic Catalog",
+      "anchor": {
+        "strategy": "text",
+        "text": "Dynamic Catalog - Lazy Load",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:02.000Z",
+      "timesObserved": 3,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "XsZufDlayr8m16XVlqQKo",
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    },
+    "dynamic-catalog-spinner-html": {
+      "id": "dynamic-catalog-spinner-html",
+      "urlPattern": "/dynamic-catalog-spinner.html",
+      "title": "Dynamic Catalog - Spinner Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/dynamic-catalog-spinner.html"
+      ],
+      "notes": "Shows a 'Loading' spinner first; after ~5s it resolves to six read-only product cards. There is no link to the product detail page and no add-to-cart.",
+      "group": "Dynamic Catalog",
+      "anchor": {
+        "strategy": "text",
+        "text": "Dynamic Catalog - Spinner",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:25.000Z",
+      "timesObserved": 3,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "XsZufDlayr8m16XVlqQKo",
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    },
+    "dynamic-catalog-slider-html": {
+      "id": "dynamic-catalog-slider-html",
+      "urlPattern": "/dynamic-catalog-slider.html",
+      "title": "Dynamic Catalog - Slider Page",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.saucedemo.com/dynamic-catalog-slider.html"
+      ],
+      "notes": "The slider auto-advances every few seconds, so the product shown after clicking a dot can change shortly afterwards (immediately after a click it showed the selected product once, and a different one a few seconds later). Product name and price are read-only: clicking them does nothing, and there is no link to the product detail page.",
+      "group": "Dynamic Catalog",
+      "anchor": {
+        "strategy": "text",
+        "text": "Dynamic Catalog - Slider",
+        "exact": true
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:42.000Z",
+      "timesObserved": 3,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "XsZufDlayr8m16XVlqQKo",
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    }
+  },
+  "edges": {
+    "home__log-in-with-credentials__inventory-html": {
+      "id": "home__log-in-with-credentials__inventory-html",
+      "fromPageId": "home",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Log in with credentials",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "Login button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Login",
+        "exact": true
+      },
+      "authFormLocators": {
+        "username": {
+          "strategy": "css",
+          "css": "[data-test=\"username\"]"
+        },
+        "password": {
+          "strategy": "css",
+          "css": "[data-test=\"password\"]"
+        }
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Redirected to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/home__log-in-with-credentials__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/home__log-in-with-credentials__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__add-item-to-cart__inventory-html": {
+      "id": "inventory-html__add-item-to-cart__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Add item to cart",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Add to cart button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Add to cart",
+        "exact": true
+      },
+      "scope": {
+        "container": {
+          "strategy": "css",
+          "css": ".inventory_item"
+        },
+        "hasText": "Sauce Labs Backpack"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Cart badge shows the item count",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "has_text",
+            "locator": {
+              "strategy": "css",
+              "css": ".shopping_cart_badge"
+            },
+            "value": "1"
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__add-item-to-cart__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__add-item-to-cart__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__sort-products__inventory-html": {
+      "id": "inventory-html__sort-products__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Sort products",
+      "intentCategory": "search_filter",
+      "action": "select",
+      "target": "Sort products dropdown",
+      "inputValue": "Price (low to high)",
+      "locator": {
+        "strategy": "role",
+        "role": "combobox",
+        "name": "Sort products",
+        "exact": true
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Active sort option reflects the selection",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "has_text",
+            "locator": {
+              "strategy": "css",
+              "css": ".active_option"
+            },
+            "value": "Price (low to high)"
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__sort-products__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__sort-products__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-product-detail__inventory-item-html": {
+      "id": "inventory-html__open-product-detail__inventory-item-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-item-html",
+      "semanticIntent": "Open product detail",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Product title link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test$=\"-title-link\"]"
+      },
+      "scope": {
+        "container": {
+          "strategy": "css",
+          "css": ".inventory_item"
+        },
+        "hasText": "Sauce Labs Backpack"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the product detail page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Back to products button is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "role",
+              "role": "button",
+              "name": "Back to products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__open-product-detail__inventory-item-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__open-product-detail__inventory-item-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-item-html__return-to-products-list__inventory-html": {
+      "id": "inventory-item-html__return-to-products-list__inventory-html",
+      "fromPageId": "inventory-item-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Return to products list",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Back to products button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Back to products",
+        "exact": true
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-item-html__return-to-products-list__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-item-html__return-to-products-list__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-cart__cart-html": {
+      "id": "inventory-html__open-cart__cart-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "cart-html",
+      "semanticIntent": "Open cart",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Cart link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"shopping-cart-link\"]"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the cart page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Your Cart heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Your Cart",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__open-cart__cart-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__open-cart__cart-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "cart-html__start-checkout__checkout-step-one-html": {
+      "id": "cart-html__start-checkout__checkout-step-one-html",
+      "fromPageId": "cart-html",
+      "toPageId": "checkout-step-one-html",
+      "semanticIntent": "Start checkout",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Checkout button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Checkout",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "cart must contain at least 1 item"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the checkout information page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Checkout information heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Checkout: Your Information",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/cart-html__start-checkout__checkout-step-one-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/cart-html__start-checkout__checkout-step-one-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "checkout-step-one-html__submit-shipping-information__checkout-step-two-html": {
+      "id": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+      "fromPageId": "checkout-step-one-html",
+      "toPageId": "checkout-step-two-html",
+      "semanticIntent": "Submit shipping information",
+      "intentCategory": "form_submit",
+      "action": "click",
+      "target": "Continue button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Continue",
+        "exact": true
+      },
+      "formFields": [
+        {
+          "label": "First Name",
+          "locator": {
+            "strategy": "css",
+            "css": "[data-test=\"firstName\"]"
+          },
+          "value": "Test",
+          "action": "fill"
+        },
+        {
+          "label": "Last Name",
+          "locator": {
+            "strategy": "css",
+            "css": "[data-test=\"lastName\"]"
+          },
+          "value": "User",
+          "action": "fill"
+        },
+        {
+          "label": "Zip/Postal Code",
+          "locator": {
+            "strategy": "css",
+            "css": "[data-test=\"postalCode\"]"
+          },
+          "value": "12345",
+          "action": "fill"
+        }
+      ],
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "cart must contain at least 1 item"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the checkout overview page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Checkout overview heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Checkout: Overview",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__submit-shipping-information__checkout-step-two-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__submit-shipping-information__checkout-step-two-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "checkout-step-two-html__finish-order__checkout-complete-html": {
+      "id": "checkout-step-two-html__finish-order__checkout-complete-html",
+      "fromPageId": "checkout-step-two-html",
+      "toPageId": "checkout-complete-html",
+      "semanticIntent": "Finish order",
+      "intentCategory": "form_submit",
+      "action": "click",
+      "target": "Finish button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Finish",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "destructive": true,
+      "preconditions": [
+        "cart must contain at least 1 item",
+        "shipping information must have been submitted"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the order confirmation page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Order confirmation heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "role",
+              "role": "heading",
+              "name": "Thank you for your order!",
+              "exact": true
+            }
+          }
+        },
+        {
+          "description": "Cart badge is gone",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "hidden",
+            "locator": {
+              "strategy": "css",
+              "css": ".shopping_cart_badge"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-two-html__finish-order__checkout-complete-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-two-html__finish-order__checkout-complete-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "checkout-complete-html__return-to-products-after-order__inventory-html": {
+      "id": "checkout-complete-html__return-to-products-after-order__inventory-html",
+      "fromPageId": "checkout-complete-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Return to products after order",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Back Home button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Back Home",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-complete-html__return-to-products-after-order__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-complete-html__return-to-products-after-order__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-side-menu__inventory-html": {
+      "id": "inventory-html__open-side-menu__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open side menu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Open Menu button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Open Menu",
+        "exact": true
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Logout link in the side menu is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"logout-sidebar-link\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__open-side-menu__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__open-side-menu__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__expand-dynamic-catalog-submenu__inventory-html": {
+      "id": "inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Expand Dynamic Catalog submenu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Dynamic Catalog menu button",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"dynamic-catalog-sidebar-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Lazy Load submenu entry is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"dynamic-catalog-lazy-load-link\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__expand-dynamic-catalog-submenu__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__expand-dynamic-catalog-submenu__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html": {
+      "id": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "dynamic-catalog-lazy-load-html",
+      "semanticIntent": "Open Dynamic Catalog Lazy Load",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Lazy Load submenu button",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"dynamic-catalog-lazy-load-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open",
+        "Dynamic Catalog submenu must be expanded"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the Lazy Load page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Lazy Load heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Dynamic Catalog - Lazy Load",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html": {
+      "id": "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+      "fromPageId": "dynamic-catalog-lazy-load-html",
+      "toPageId": "dynamic-catalog-spinner-html",
+      "semanticIntent": "Open Dynamic Catalog Spinner",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Spinner submenu button",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"dynamic-catalog-spinner-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open",
+        "Dynamic Catalog submenu must be expanded"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the Spinner page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Spinner heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Dynamic Catalog - Spinner",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html": {
+      "id": "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html",
+      "fromPageId": "dynamic-catalog-spinner-html",
+      "toPageId": "dynamic-catalog-slider-html",
+      "semanticIntent": "Open Dynamic Catalog Slider",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Slider submenu button",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"dynamic-catalog-slider-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open",
+        "Dynamic Catalog submenu must be expanded"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the Slider page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Slider heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Dynamic Catalog - Slider",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html": {
+      "id": "dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html",
+      "fromPageId": "dynamic-catalog-slider-html",
+      "toPageId": "dynamic-catalog-slider-html",
+      "semanticIntent": "Show product in slider",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Show Sauce Labs Bike Light slider dot",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"dynamic-catalog-slider-dot-0\"]"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Slider dot remains visible after selection",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"dynamic-catalog-slider-dot-0\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "partial",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T22:33:23.000Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw",
+        "XsZufDlayr8m16XVlqQKo"
+      ]
+    },
+    "dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html": {
+      "id": "dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html",
+      "fromPageId": "dynamic-catalog-slider-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open All Items from menu",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "All Items menu link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"inventory-sidebar-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-about-page__inventory-html": {
+      "id": "inventory-html__open-about-page__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open About page",
+      "intentCategory": "external",
+      "action": "click",
+      "target": "About menu link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"about-sidebar-link\"]"
+      },
+      "external": {
+        "url": "https://saucelabs.com/",
+        "opensNewTab": false
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the Sauce Labs site",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        }
+      ],
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__open-about-page__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__log-out__home": {
+      "id": "inventory-html__log-out__home",
+      "fromPageId": "inventory-html",
+      "toPageId": "home",
+      "semanticIntent": "Log out",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "Logout menu link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"logout-sidebar-link\"]"
+      },
+      "uiRegion": "side-menu",
+      "preconditions": [
+        "side menu must be open"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Returns to the login page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Login button is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "role",
+              "role": "button",
+              "name": "Login",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-html__log-out__home.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-html__log-out__home.before.png",
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-x-social-page__inventory-html": {
+      "id": "inventory-html__open-x-social-page__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open X social page",
+      "intentCategory": "external",
+      "action": "click",
+      "target": "X footer link",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "X",
+        "exact": true
+      },
+      "external": {
+        "url": "https://x.com/saucelabs",
+        "opensNewTab": true
+      },
+      "uiRegion": "footer",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the X profile",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        }
+      ],
+      "lastRepair": {
+        "at": "2026-10-07T03:18:42.473Z",
+        "runId": "20261006-221717-07bg",
+        "reason": "The X footer link opens in a new tab (target=_blank), so the original page stays on the Products page and the URL assertion on the current page can never pass. The map recorded opensNewTab: false."
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-facebook-social-page__inventory-html": {
+      "id": "inventory-html__open-facebook-social-page__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open Facebook social page",
+      "intentCategory": "external",
+      "action": "click",
+      "target": "Facebook footer link",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Facebook",
+        "exact": true
+      },
+      "external": {
+        "url": "https://www.facebook.com/saucelabs",
+        "opensNewTab": true
+      },
+      "uiRegion": "footer",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the Facebook page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        }
+      ],
+      "lastRepair": {
+        "at": "2026-10-07T02:53:59.857Z",
+        "runId": "20261006-130326-x858",
+        "reason": "The Facebook link opens in a new tab, so the original page never navigates; the map recorded opensNewTab: false."
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "inventory-html__open-linkedin-social-page__inventory-html": {
+      "id": "inventory-html__open-linkedin-social-page__inventory-html",
+      "fromPageId": "inventory-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Open LinkedIn social page",
+      "intentCategory": "external",
+      "action": "click",
+      "target": "LinkedIn footer link",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "LinkedIn",
+        "exact": true
+      },
+      "external": {
+        "url": "https://www.linkedin.com/company/sauce-labs/",
+        "opensNewTab": true
+      },
+      "uiRegion": "footer",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the LinkedIn page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        }
+      ],
+      "lastRepair": {
+        "at": "2026-10-07T03:07:49.713Z",
+        "runId": "20261006-220634-qe9x",
+        "reason": "The LinkedIn footer link opens in a new tab, so the original page never navigates and stays on the Products page; the map recorded opensNewTab: false."
+      },
+      "firstSeenAt": "2026-10-06T17:58:00.000Z",
+      "lastVerifiedAt": "2026-10-06T17:58:00.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "5sjgnxM4hSPchuL-0oyZw"
+      ]
+    },
+    "cart-html__remove-item-from-cart__cart-html": {
+      "id": "cart-html__remove-item-from-cart__cart-html",
+      "fromPageId": "cart-html",
+      "toPageId": "cart-html",
+      "semanticIntent": "Remove item from cart",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Remove button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Remove",
+        "exact": true
+      },
+      "scope": {
+        "container": {
+          "strategy": "css",
+          "css": ".cart_item"
+        },
+        "hasText": "Sauce Labs Backpack"
+      },
+      "preconditions": [
+        "cart must contain at least 1 item"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Cart line item disappears",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "hidden",
+            "locator": {
+              "strategy": "css",
+              "css": ".cart_item"
+            }
+          }
+        },
+        {
+          "description": "Cart badge disappears",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "hidden",
+            "locator": {
+              "strategy": "css",
+              "css": ".shopping_cart_badge"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/cart-html__remove-item-from-cart__cart-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/cart-html__remove-item-from-cart__cart-html.before.png",
+      "firstSeenAt": "2026-10-06T22:19:30.000Z",
+      "lastVerifiedAt": "2026-10-06T22:19:30.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "cart-html__continue-shopping-from-cart__inventory-html": {
+      "id": "cart-html__continue-shopping-from-cart__inventory-html",
+      "fromPageId": "cart-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Continue shopping from cart",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Continue Shopping button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Continue Shopping",
+        "exact": true
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/cart-html__continue-shopping-from-cart__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/cart-html__continue-shopping-from-cart__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T22:19:45.000Z",
+      "lastVerifiedAt": "2026-10-06T22:19:45.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html": {
+      "id": "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html",
+      "fromPageId": "checkout-step-one-html",
+      "toPageId": "checkout-step-one-html",
+      "semanticIntent": "Submit incomplete shipping information",
+      "intentCategory": "form_submit",
+      "action": "click",
+      "target": "Continue button (all fields empty)",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Continue",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "cart must contain at least 1 item"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Validation error asks for the first name",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "has_text",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"error\"]"
+            },
+            "value": "Error: First Name is required"
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html.before.png",
+      "firstSeenAt": "2026-10-06T22:20:15.000Z",
+      "lastVerifiedAt": "2026-10-06T22:20:15.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-step-one-html__dismiss-form-error__checkout-step-one-html": {
+      "id": "checkout-step-one-html__dismiss-form-error__checkout-step-one-html",
+      "fromPageId": "checkout-step-one-html",
+      "toPageId": "checkout-step-one-html",
+      "semanticIntent": "Dismiss form error",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Dismiss error button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Dismiss error",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "a validation error must be displayed"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Validation error banner disappears",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "hidden",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"error\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__dismiss-form-error__checkout-step-one-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__dismiss-form-error__checkout-step-one-html.before.png",
+      "firstSeenAt": "2026-10-06T22:20:30.000Z",
+      "lastVerifiedAt": "2026-10-06T22:20:30.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-step-one-html__cancel-checkout-information__cart-html": {
+      "id": "checkout-step-one-html__cancel-checkout-information__cart-html",
+      "fromPageId": "checkout-step-one-html",
+      "toPageId": "cart-html",
+      "semanticIntent": "Cancel checkout information",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Cancel button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Cancel",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "cart must contain at least 1 item"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates back to the cart page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Your Cart heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Your Cart",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__cancel-checkout-information__cart-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-one-html__cancel-checkout-information__cart-html.before.png",
+      "firstSeenAt": "2026-10-06T22:20:45.000Z",
+      "lastVerifiedAt": "2026-10-06T22:20:45.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "checkout-step-two-html__cancel-checkout-overview__inventory-html": {
+      "id": "checkout-step-two-html__cancel-checkout-overview__inventory-html",
+      "fromPageId": "checkout-step-two-html",
+      "toPageId": "inventory-html",
+      "semanticIntent": "Cancel checkout overview",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Cancel button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Cancel",
+        "exact": true
+      },
+      "uiRegion": "checkout-wizard",
+      "preconditions": [
+        "cart must contain at least 1 item",
+        "shipping information must have been submitted"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the products page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Products heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Products",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/checkout-step-two-html__cancel-checkout-overview__inventory-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/checkout-step-two-html__cancel-checkout-overview__inventory-html.before.png",
+      "firstSeenAt": "2026-10-06T22:21:30.000Z",
+      "lastVerifiedAt": "2026-10-06T22:21:30.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "7iFpE0drTael7OkZPRxk2"
+      ]
+    },
+    "inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html": {
+      "id": "inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html",
+      "fromPageId": "inventory-item-html",
+      "toPageId": "inventory-item-html",
+      "semanticIntent": "Add item to cart from product detail",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Add to cart button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Add to cart",
+        "exact": true
+      },
+      "preconditions": [
+        "the product must not already be in the cart"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Cart badge shows the item count",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "has_text",
+            "locator": {
+              "strategy": "css",
+              "css": ".shopping_cart_badge"
+            },
+            "value": "1"
+          }
+        },
+        {
+          "description": "The button now reads Remove",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "role",
+              "role": "button",
+              "name": "Remove",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html.before.png",
+      "firstSeenAt": "2026-10-06T22:32:12.000Z",
+      "lastVerifiedAt": "2026-10-06T22:32:12.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "XsZufDlayr8m16XVlqQKo"
+      ]
+    },
+    "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html": {
+      "id": "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html",
+      "fromPageId": "inventory-item-html",
+      "toPageId": "inventory-item-html",
+      "semanticIntent": "Remove item from cart on product detail",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Remove button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Remove",
+        "exact": true
+      },
+      "preconditions": [
+        "the product must already be in the cart"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Cart badge disappears",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "hidden",
+            "locator": {
+              "strategy": "css",
+              "css": ".shopping_cart_badge"
+            }
+          }
+        },
+        {
+          "description": "The button reads Add to cart again",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "role",
+              "role": "button",
+              "name": "Add to cart",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html.before.png",
+      "firstSeenAt": "2026-10-06T22:32:24.000Z",
+      "lastVerifiedAt": "2026-10-06T22:32:24.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "XsZufDlayr8m16XVlqQKo"
+      ]
+    },
+    "inventory-item-html__open-cart__cart-html": {
+      "id": "inventory-item-html__open-cart__cart-html",
+      "fromPageId": "inventory-item-html",
+      "toPageId": "cart-html",
+      "semanticIntent": "Open cart",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Cart link",
+      "locator": {
+        "strategy": "css",
+        "css": "[data-test=\"shopping-cart-link\"]"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Navigates to the cart page",
+          "assertionType": "url_matches",
+          "check": {
+            "kind": "url"
+          }
+        },
+        {
+          "description": "Your Cart heading is visible",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "text",
+              "text": "Your Cart",
+              "exact": true
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/inventory-item-html__open-cart__cart-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/inventory-item-html__open-cart__cart-html.before.png",
+      "firstSeenAt": "2026-10-06T22:32:36.000Z",
+      "lastVerifiedAt": "2026-10-06T22:32:36.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "XsZufDlayr8m16XVlqQKo"
+      ]
+    },
+    "home__submit-login-with-invalid-credentials__home": {
+      "id": "home__submit-login-with-invalid-credentials__home",
+      "fromPageId": "home",
+      "toPageId": "home",
+      "semanticIntent": "Submit login with invalid credentials",
+      "intentCategory": "form_submit",
+      "action": "click",
+      "target": "Login button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Login",
+        "exact": true
+      },
+      "formFields": [
+        {
+          "label": "Username",
+          "locator": {
+            "strategy": "css",
+            "css": "[data-test=\"username\"]"
+          },
+          "value": "invalid_user",
+          "action": "fill"
+        },
+        {
+          "label": "Password",
+          "locator": {
+            "strategy": "css",
+            "css": "[data-test=\"password\"]"
+          },
+          "value": "not-a-real-password",
+          "action": "fill"
+        }
+      ],
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Login error banner shows the credentials mismatch message",
+          "assertionType": "text_visible",
+          "check": {
+            "kind": "has_text",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"error\"]"
+            },
+            "value": "Epic sadface: Username and password do not match any user in this service"
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/home__submit-login-with-invalid-credentials__home.png",
+      "firstSeenAt": "2026-10-07T02:33:18.000Z",
+      "lastVerifiedAt": "2026-10-07T02:33:18.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "uge0-1inbPUZ1h6sv8q2g"
+      ]
+    },
+    "dynamic-catalog-lazy-load-html__open-side-menu__dynamic-catalog-lazy-load-html": {
+      "id": "dynamic-catalog-lazy-load-html__open-side-menu__dynamic-catalog-lazy-load-html",
+      "fromPageId": "dynamic-catalog-lazy-load-html",
+      "toPageId": "dynamic-catalog-lazy-load-html",
+      "semanticIntent": "Open side menu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Open Menu button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Open Menu",
+        "exact": true
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Logout link in the side menu is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"logout-sidebar-link\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-lazy-load-html__open-side-menu__dynamic-catalog-lazy-load-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-lazy-load-html__open-side-menu__dynamic-catalog-lazy-load-html.before.png",
+      "firstSeenAt": "2026-10-07T15:30:02.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:02.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    },
+    "dynamic-catalog-spinner-html__open-side-menu__dynamic-catalog-spinner-html": {
+      "id": "dynamic-catalog-spinner-html__open-side-menu__dynamic-catalog-spinner-html",
+      "fromPageId": "dynamic-catalog-spinner-html",
+      "toPageId": "dynamic-catalog-spinner-html",
+      "semanticIntent": "Open side menu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Open Menu button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Open Menu",
+        "exact": true
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Logout link in the side menu is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"logout-sidebar-link\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-spinner-html__open-side-menu__dynamic-catalog-spinner-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-spinner-html__open-side-menu__dynamic-catalog-spinner-html.before.png",
+      "firstSeenAt": "2026-10-07T15:30:25.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:25.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    },
+    "dynamic-catalog-slider-html__open-side-menu__dynamic-catalog-slider-html": {
+      "id": "dynamic-catalog-slider-html__open-side-menu__dynamic-catalog-slider-html",
+      "fromPageId": "dynamic-catalog-slider-html",
+      "toPageId": "dynamic-catalog-slider-html",
+      "semanticIntent": "Open side menu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Open Menu button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Open Menu",
+        "exact": true
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Logout link in the side menu is visible",
+          "assertionType": "element_visible",
+          "check": {
+            "kind": "visible",
+            "locator": {
+              "strategy": "css",
+              "css": "[data-test=\"logout-sidebar-link\"]"
+            }
+          }
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__open-side-menu__dynamic-catalog-slider-html.png",
+      "screenshotBefore": "projects/www-saucedemo-com/screenshots/dynamic-catalog-slider-html__open-side-menu__dynamic-catalog-slider-html.before.png",
+      "firstSeenAt": "2026-10-07T15:30:42.000Z",
+      "lastVerifiedAt": "2026-10-07T15:30:42.000Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "W09fFIy5HdRw4hj0PZ7f5"
+      ]
+    }
+  }
+}

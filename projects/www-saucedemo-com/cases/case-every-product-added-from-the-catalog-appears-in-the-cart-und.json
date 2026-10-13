@@ -1,0 +1,74 @@
+{
+  "id": "case-every-product-added-from-the-catalog-appears-in-the-cart-und",
+  "title": "Every product added from the catalog appears in the cart under the same name",
+  "status": "approved",
+  "origin": "agent",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Backpack",
+      "capture": [
+        {
+          "element": "inventory-html#product-name",
+          "item": "Sauce Labs Backpack",
+          "as": "nameOne"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bike Light",
+      "expect": {
+        "Cart badge shows the item count": "2"
+      },
+      "capture": [
+        {
+          "element": "inventory-html#product-name",
+          "item": "Sauce Labs Bike Light",
+          "as": "nameTwo"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bolt T-Shirt",
+      "expect": {
+        "Cart badge shows the item count": "3"
+      },
+      "capture": [
+        {
+          "element": "inventory-html#product-name",
+          "item": "Sauce Labs Bolt T-Shirt",
+          "as": "nameThree"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__open-cart__cart-html",
+      "verify": [
+        {
+          "element": "cart-html#cart-item-name",
+          "item": "Sauce Labs Backpack",
+          "op": "equals",
+          "equalsVar": "nameOne"
+        },
+        {
+          "element": "cart-html#cart-item-name",
+          "item": "Sauce Labs Bike Light",
+          "op": "equals",
+          "equalsVar": "nameTwo"
+        },
+        {
+          "element": "cart-html#cart-item-name",
+          "item": "Sauce Labs Bolt T-Shirt",
+          "op": "equals",
+          "equalsVar": "nameThree"
+        }
+      ]
+    }
+  ],
+  "notes": "Adds three different products, captures each name on the catalog, then checks each cart line carries the same name — covers several items at once (SHOP-1 / ac-1).",
+  "createdAt": "2026-10-08T04:14:35.428Z",
+  "updatedAt": "2026-10-08T04:18:31.757Z"
+}

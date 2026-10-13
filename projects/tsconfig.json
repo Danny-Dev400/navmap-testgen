@@ -1,0 +1,16 @@
+{
+  // Type-checks generated tests (projects/<id>/tests/) in the editor and with
+  // `npx tsc --noEmit -p projects`. Not the root tsconfig: its NodeNext resolution rejects the
+  // extensionless imports that Playwright's loader resolves fine.
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["*/tests/**/*.ts"]
+}

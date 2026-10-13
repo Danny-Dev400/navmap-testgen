@@ -1,0 +1,22 @@
+{
+  "id": "case-login-with-an-empty-form-asks-for-a-username",
+  "title": "Login with an empty form asks for a username",
+  "status": "approved",
+  "origin": "agent",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "home__submit-login-with-invalid-credentials__home",
+      "form": {
+        "Username": "",
+        "Password": ""
+      },
+      "expect": {
+        "Login error banner shows the credentials mismatch message": "Epic sadface: Username is required"
+      }
+    }
+  ],
+  "notes": "Negative case for required-field validation: submitting the login form with both fields empty shows 'Username is required' (username is validated before password).",
+  "createdAt": "2026-10-07T02:33:48.562Z",
+  "updatedAt": "2026-10-07T02:35:44.473Z"
+}

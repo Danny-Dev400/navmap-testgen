@@ -1,0 +1,14 @@
+{
+  "id": "base-inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html",
+  "title": "Remove item from cart on product detail",
+  "status": "approved",
+  "origin": "baseline",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html"
+    }
+  ],
+  "createdAt": "2026-10-06T22:41:03.621Z",
+  "updatedAt": "2026-10-06T22:41:28.869Z"
+}

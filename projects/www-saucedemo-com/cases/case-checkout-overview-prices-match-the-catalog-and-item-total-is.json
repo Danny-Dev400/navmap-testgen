@@ -1,0 +1,88 @@
+{
+  "id": "case-checkout-overview-prices-match-the-catalog-and-item-total-is",
+  "title": "Checkout overview prices match the catalog and Item total is their sum",
+  "status": "approved",
+  "origin": "manual",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "capture": [
+        {
+          "element": "inventory-html#product-price",
+          "item": "Sauce Labs Backpack",
+          "as": "backpackPrice"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bike Light",
+      "expect": {
+        "Cart badge shows the item count": "2"
+      },
+      "capture": [
+        {
+          "element": "inventory-html#product-price",
+          "item": "Sauce Labs Bike Light",
+          "as": "bikeLightPrice"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bolt T-Shirt",
+      "expect": {
+        "Cart badge shows the item count": "3"
+      },
+      "capture": [
+        {
+          "element": "inventory-html#product-price",
+          "item": "Sauce Labs Bolt T-Shirt",
+          "as": "tShirtPrice"
+        }
+      ]
+    },
+    {
+      "edgeId": "inventory-html__open-cart__cart-html"
+    },
+    {
+      "edgeId": "cart-html__start-checkout__checkout-step-one-html"
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+      "verify": [
+        {
+          "element": "checkout-step-two-html#item-price",
+          "item": "Sauce Labs Backpack",
+          "op": "equals",
+          "equalsVar": "backpackPrice"
+        },
+        {
+          "element": "checkout-step-two-html#item-price",
+          "item": "Sauce Labs Bike Light",
+          "op": "equals",
+          "equalsVar": "bikeLightPrice"
+        },
+        {
+          "element": "checkout-step-two-html#item-price",
+          "item": "Sauce Labs Bolt T-Shirt",
+          "op": "equals",
+          "equalsVar": "tShirtPrice"
+        },
+        {
+          "element": "checkout-step-two-html#item-total",
+          "op": "equals",
+          "equalsSumOf": [
+            "backpackPrice",
+            "bikeLightPrice",
+            "tShirtPrice"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Acceptance scenario for the design agent (Roadmap 3c), staged by hand through navmap:save-design: add three products, capture each catalog price, then check each line price on the checkout overview and that Item total equals the sum.",
+  "createdAt": "2026-10-06T22:51:53.141Z",
+  "updatedAt": "2026-10-06T22:52:03.707Z"
+}

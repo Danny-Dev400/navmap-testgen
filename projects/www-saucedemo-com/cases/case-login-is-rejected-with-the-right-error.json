@@ -1,0 +1,54 @@
+{
+  "id": "case-login-is-rejected-with-the-right-error",
+  "title": "Login is rejected with the right error",
+  "status": "approved",
+  "origin": "manual",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "home__submit-login-with-invalid-credentials__home",
+      "form": {
+        "Username": "{{username}}",
+        "Password": "{{password}}"
+      },
+      "expect": {
+        "Login error banner shows the credentials mismatch message": "{{error}}"
+      }
+    }
+  ],
+  "dataset": {
+    "columns": [
+      "username",
+      "password",
+      "error"
+    ],
+    "rows": [
+      {
+        "name": "empty form",
+        "values": {
+          "username": "",
+          "password": "",
+          "error": "Epic sadface: Username is required"
+        }
+      },
+      {
+        "name": "username only",
+        "values": {
+          "username": "standard_user",
+          "password": "",
+          "error": "Epic sadface: Password is required"
+        }
+      },
+      {
+        "name": "unknown user",
+        "values": {
+          "username": "invalid_user",
+          "password": "not-a-real-password",
+          "error": "Epic sadface: Username and password do not match any user in this service"
+        }
+      }
+    ]
+  },
+  "createdAt": "2026-10-07T03:33:44.097Z",
+  "updatedAt": "2026-10-07T03:50:30.172Z"
+}

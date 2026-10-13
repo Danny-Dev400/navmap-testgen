@@ -1,0 +1,14 @@
+{
+  "id": "base-inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+  "title": "Expand Dynamic Catalog submenu",
+  "status": "approved",
+  "origin": "baseline",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__expand-dynamic-catalog-submenu__inventory-html"
+    }
+  ],
+  "createdAt": "2026-10-06T19:53:41.187Z",
+  "updatedAt": "2026-10-06T19:53:41.187Z"
+}

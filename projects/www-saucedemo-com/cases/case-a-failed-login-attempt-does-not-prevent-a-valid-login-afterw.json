@@ -1,0 +1,18 @@
+{
+  "id": "case-a-failed-login-attempt-does-not-prevent-a-valid-login-afterw",
+  "title": "A failed login attempt does not prevent a valid login afterwards",
+  "status": "approved",
+  "origin": "agent",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "home__submit-login-with-invalid-credentials__home"
+    },
+    {
+      "edgeId": "home__log-in-with-credentials__inventory-html"
+    }
+  ],
+  "notes": "Journey: reject a fake login first, then log in with the real test user on the same page; the user must reach the products page, showing the form recovers cleanly after an error.",
+  "createdAt": "2026-10-07T02:33:48.562Z",
+  "updatedAt": "2026-10-07T02:35:14.072Z"
+}

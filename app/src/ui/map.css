@@ -1,0 +1,852 @@
+/* The map tab: toolbar, canvas (React Flow, themed through its --xy-* variables), nodes, edge
+   labels, legend, banners and the side panel. Node sizes must match elkLayout.ts. */
+
+/* ---- page & toolbar ---- */
+.map-page .ui-page-header {
+  padding-bottom: var(--sp-3);
+}
+.map-page .ui-page-toolbar {
+  margin-top: var(--sp-3);
+}
+.map-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: min(300px, 100%);
+}
+.map-search input {
+  width: 100%;
+  height: 32px;
+  padding: 0 32px 0 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-size: var(--fs-sm);
+}
+.map-search input::placeholder {
+  color: var(--text-3);
+}
+.map-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.map-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-3);
+  pointer-events: none;
+}
+.map-search-clear {
+  position: absolute;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--text-3);
+  cursor: pointer;
+}
+.map-search-clear:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.map-search-kbd {
+  position: absolute;
+  right: 8px;
+  font-size: 11px;
+  line-height: 16px;
+  padding: 0 5px;
+  color: var(--text-3);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  pointer-events: none;
+}
+.map-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}
+.map-chip:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.map-chip.is-on {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.map-toolbar-label {
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+}
+.map-btn-count {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 0 7px;
+  margin-left: 2px;
+}
+
+/* ---- canvas ---- */
+.map-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  position: relative;
+}
+.map-canvas {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+.map-canvas-message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  color: var(--text-3);
+}
+.map-canvas .react-flow {
+  background: var(--bg);
+  --xy-background-color: var(--bg);
+  --xy-background-pattern-dots-color: var(--border-strong);
+  --xy-minimap-background-color: var(--surface);
+  --xy-minimap-mask-background-color: color-mix(in srgb, var(--text) 7%, transparent);
+  --xy-minimap-mask-stroke-color: var(--accent);
+  --xy-minimap-mask-stroke-width: 1.5;
+  --xy-controls-button-background-color: var(--surface);
+  --xy-controls-button-background-color-hover: var(--surface-hover);
+  --xy-controls-button-color: var(--text-2);
+  --xy-controls-button-color-hover: var(--text);
+  --xy-controls-button-border-color: var(--border);
+  --xy-controls-box-shadow: var(--shadow-sm);
+  --xy-attribution-background-color: transparent;
+  /* an expanded group's frame: a shade off the canvas, so it reads as a region in both themes */
+  --map-group-bg: color-mix(in srgb, var(--text) 5%, var(--bg));
+  --map-group-head: color-mix(in srgb, var(--text) 9%, var(--bg));
+  --map-group-border: color-mix(in srgb, var(--text) 26%, var(--bg));
+  /* read by NavMapApp's minimap node colors */
+  --map-minimap-node: var(--text-3);
+  --map-minimap-dim: var(--border);
+  --map-minimap-group: color-mix(in srgb, var(--text) 10%, var(--surface));
+}
+/* Edge labels above group frames (z-index 0), so a frame's background never covers the labels of
+   the actions inside it. */
+.map-canvas .react-flow__edgelabel-renderer {
+  z-index: 1;
+}
+.map-canvas .react-flow__minimap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.map-canvas .react-flow__controls {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.map-canvas .react-flow__attribution a {
+  color: var(--text-3);
+}
+/* Nodes can't be connected or dragged here: their handles are only anchors. */
+.map-canvas .react-flow__handle {
+  opacity: 0;
+  pointer-events: none;
+}
+.map-canvas .react-flow__node {
+  cursor: pointer;
+}
+/* A group's frame is click-through (only its collapse button takes clicks), so clicks inside it
+   reach the edges and labels of its actions. */
+.map-canvas .react-flow__node-group {
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none !important; /* React Flow sets pointer-events inline */
+}
+
+/* ---- nodes ---- */
+.map-node {
+  width: 220px;
+  height: 76px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  padding: 8px 12px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  transition:
+    opacity 120ms,
+    box-shadow 120ms,
+    border-color 120ms;
+}
+.map-node:hover {
+  border-color: var(--accent);
+}
+.map-node.is-entry {
+  border-left: 3px solid var(--accent);
+}
+.map-node.is-selected {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent),
+    var(--shadow-md);
+}
+.map-node.is-dimmed {
+  opacity: 0.28;
+}
+.map-node-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.map-node-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.map-node-entry {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.map-node-lock {
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+.map-node-url {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--text-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.map-node-meta {
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--text-3);
+}
+/* a collapsed group: a small stack of cards */
+.map-cluster {
+  height: 84px;
+  background: var(--surface-2);
+  box-shadow:
+    5px 5px 0 -1px var(--surface-2),
+    5px 5px 0 0 var(--border-strong),
+    var(--shadow-sm);
+}
+.map-cluster-icon {
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+.map-cluster-hint {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--text-3);
+}
+.map-cluster:hover .map-cluster-hint {
+  color: var(--accent-text);
+}
+
+/* an expanded group's frame */
+.map-group {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--map-group-bg);
+  border: 1.5px solid var(--map-group-border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+.map-group-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 36px; /* = GROUP_HEADER_HEIGHT in elkLayout.ts */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px 0 12px;
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text);
+  background: var(--map-group-head);
+  border-bottom: 1px solid var(--map-group-border);
+  border-radius: 10px 10px 0 0;
+}
+.map-group-icon {
+  color: var(--text-2);
+}
+.map-group-count {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-2);
+}
+.map-group-collapse {
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-2);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.map-group-collapse:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+/* ---- edge labels (their size must match labelSize in elkLayout.ts: 20px tall) ---- */
+.map-edge-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  box-sizing: border-box;
+  height: 20px;
+  padding: 0 7px;
+  font-size: 11px;
+  line-height: 14px;
+  white-space: nowrap;
+  color: var(--text-2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 6px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: opacity 120ms;
+}
+.map-edge-label:hover {
+  color: var(--text);
+  border-top-color: var(--border-strong);
+  border-right-color: var(--border-strong);
+  border-bottom-color: var(--border-strong);
+}
+.map-edge-label.is-related {
+  color: var(--text);
+  font-weight: 550;
+}
+.map-edge-label.is-selected {
+  color: var(--text);
+  font-weight: 600;
+  border-top-color: var(--accent);
+  border-right-color: var(--accent);
+  border-bottom-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.map-edge-label.is-dimmed {
+  opacity: 0.22;
+}
+.map-edge-badge {
+  display: inline-flex;
+  color: var(--text-3);
+}
+
+/* ---- legend ---- */
+.map-legend {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  font-size: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.map-legend.is-open {
+  min-width: 180px;
+}
+.map-legend-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background: none;
+  color: var(--text-2);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.map-legend-head > span:first-child {
+  flex: 1;
+  text-align: left;
+}
+.map-legend-filtering {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-text);
+  background: var(--accent-soft);
+  border-radius: 999px;
+  padding: 0 7px;
+}
+.map-legend-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 2px 6px 8px;
+}
+.map-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  border: none;
+  border-radius: 4px;
+  background: none;
+  color: var(--text-2);
+  font: inherit;
+  text-align: left;
+}
+.map-legend-row.is-toggle {
+  cursor: pointer;
+}
+.map-legend-row.is-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+.map-legend-row.is-off {
+  opacity: 0.4;
+}
+.map-legend-row[aria-pressed="true"] {
+  color: var(--text);
+  font-weight: 600;
+}
+.map-legend-swatch {
+  flex-shrink: 0;
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+}
+.map-legend-swatch.is-dashed {
+  background: repeating-linear-gradient(to right, var(--text-3) 0 4px, transparent 4px 7px);
+}
+.map-legend-icon {
+  flex-shrink: 0;
+  margin: 0 2px;
+  color: var(--text-3);
+}
+.map-legend-icon.is-entry {
+  color: var(--accent);
+}
+.map-legend-sep {
+  height: 1px;
+  margin: 4px;
+  background: var(--border);
+}
+.map-legend-clear {
+  margin: 4px 4px 0;
+  padding: 3px 0;
+  border: none;
+  background: none;
+  color: var(--accent-text);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ---- banners & hint over the canvas ---- */
+.map-banners {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.map-banner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 5px 5px 12px;
+  white-space: nowrap;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+}
+.map-banner > svg {
+  color: var(--accent);
+}
+.map-banner strong {
+  color: var(--text);
+}
+.map-banner button {
+  padding: 3px 10px;
+  border: none;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+.map-banner button:hover {
+  background: var(--accent);
+  color: var(--text-on-accent);
+}
+.map-hint {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 6px 12px;
+  white-space: nowrap;
+  font-size: 12px;
+  color: var(--text-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  pointer-events: none;
+}
+
+/* ---- side panel ---- */
+.map-detail-wrap {
+  width: 400px;
+  flex-shrink: 0;
+  display: flex;
+  min-height: 0;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+}
+@media (max-width: 1100px) {
+  .map-detail-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(420px, 100%);
+    z-index: 20;
+    box-shadow: var(--shadow-lg);
+  }
+  /* the panel covers the right of the canvas: keep overlays in the part left visible */
+  .map-body.has-detail .map-legend,
+  .map-body.has-detail .map-canvas .react-flow__minimap {
+    display: none;
+  }
+  .map-body.has-detail .map-banners {
+    left: calc((100% - min(420px, 100%)) / 2);
+  }
+}
+.map-arrow {
+  color: var(--text-3);
+  font-weight: 400;
+}
+.map-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.map-detail-lead {
+  margin: 0 0 var(--sp-3);
+  color: var(--text-2);
+  font-size: var(--fs-sm);
+}
+.map-detail-url code {
+  display: block;
+  padding: 6px 10px;
+  font-size: var(--fs-sm);
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+.map-detail-samples {
+  margin-top: 6px;
+  font-size: var(--fs-sm);
+}
+.map-detail-samples summary {
+  cursor: pointer;
+  color: var(--text-3);
+}
+.map-detail-samples ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  word-break: break-all;
+}
+.map-detail-notes {
+  margin: var(--sp-3) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+}
+.map-detail-wrap .ui-callout {
+  margin-top: var(--sp-3);
+}
+.map-detail-section {
+  margin-top: var(--sp-5);
+}
+.map-detail-h {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 var(--sp-2);
+  font-family: var(--font);
+  font-size: var(--fs-xs);
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+.map-detail-count {
+  padding: 0 7px;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-radius: 999px;
+}
+.map-detail-empty {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+}
+.map-detail-meta {
+  margin: var(--sp-5) 0 0;
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.map-detail-result {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+}
+.map-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.map-rows li + li {
+  border-top: 1px solid var(--border);
+}
+.map-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border: none;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.map-row:hover {
+  background: var(--surface-hover);
+}
+.map-row:hover .map-row-chevron {
+  color: var(--text);
+}
+.map-row-dot {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.map-row-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.map-row-title {
+  font-size: var(--fs-sm);
+  font-weight: 550;
+}
+.map-row-meta {
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.map-row-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 1px 7px;
+  font-size: 11px;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-radius: 999px;
+}
+.map-row-chevron {
+  flex-shrink: 0;
+  color: var(--text-3);
+}
+.map-route {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.map-route-page {
+  padding: 4px 10px;
+  font-size: var(--fs-sm);
+  font-weight: 550;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.map-route-page:hover {
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.map-route-arrow {
+  color: var(--text-3);
+}
+.map-route-same {
+  font-size: var(--fs-sm);
+  color: var(--text-3);
+}
+.map-facts {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 6px 12px;
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+.map-facts dt {
+  color: var(--text-3);
+}
+.map-facts dd {
+  margin: 0;
+  min-width: 0;
+  color: var(--text);
+}
+.map-code {
+  display: block;
+  padding: 4px 8px;
+  font-size: 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  word-break: break-all;
+}
+.map-shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.map-shots figure {
+  margin: 0;
+}
+.map-shots button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: zoom-in;
+}
+.map-shots button:hover {
+  border-color: var(--accent);
+}
+.map-shots img {
+  display: block;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
+}
+.map-shots figcaption {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: var(--text-3);
+}
+.map-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+  font-size: var(--fs-sm);
+  color: var(--text);
+}
+.map-check-kind {
+  margin-right: 2px;
+  padding: 0 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--surface-2);
+  border-radius: 4px;
+}
+.map-snapshot-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-3);
+}
+.map-snapshot-head > span {
+  flex: 1;
+}
+.map-detail-wrap .page-snapshot-pre {
+  margin-top: var(--sp-2);
+  color: var(--text);
+  background: var(--surface-2);
+  border-color: var(--border);
+}

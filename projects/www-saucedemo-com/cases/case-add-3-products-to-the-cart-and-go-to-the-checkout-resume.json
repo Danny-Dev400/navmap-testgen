@@ -1,0 +1,37 @@
+{
+  "id": "case-add-3-products-to-the-cart-and-go-to-the-checkout-resume",
+  "title": "Add 3 products to the cart and go to the checkout resume",
+  "status": "approved",
+  "origin": "manual",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html"
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bike Light",
+      "expect": {
+        "Cart badge shows the item count": "2"
+      }
+    },
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bolt T-Shirt",
+      "expect": {
+        "Cart badge shows the item count": "3"
+      }
+    },
+    {
+      "edgeId": "inventory-html__open-cart__cart-html"
+    },
+    {
+      "edgeId": "cart-html__start-checkout__checkout-step-one-html"
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html"
+    }
+  ],
+  "createdAt": "2026-10-06T20:27:58.290Z",
+  "updatedAt": "2026-10-06T20:35:20.617Z"
+}

@@ -1,0 +1,168 @@
+/* Design tokens — the single source of color, type, spacing, radius and shadow for the dashboard.
+   Light by default, dark under <html data-theme="dark"> — set from the choice in Settings, or from
+   the system when that's "System" (ui/theme.ts). Components read only these variables. */
+
+:root {
+  color-scheme: light;
+
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Roboto, Arial, sans-serif;
+  --font-mono: "Cascadia Code", ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  /* type scale */
+  --fs-xs: 12px;
+  --fs-sm: 13px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+
+  /* spacing (4px grid) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 12px;
+
+  /* neutrals */
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f1f3f6;
+  --surface-hover: #f4f6f9;
+  --surface-selected: #eef3ff;
+  --border: #e3e6eb;
+  --border-strong: #cdd2da;
+  --text: #111827;
+  --text-2: #4b5563;
+  --text-3: #6b7280;
+  --text-on-accent: #ffffff;
+
+  /* accent + semantic */
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eaf1ff;
+  --accent-text: #1d4ed8;
+  --success: #16a34a;
+  --success-soft: #e9f8ef;
+  --success-text: #15803d;
+  --warning: #d97706;
+  --warning-soft: #fff6e5;
+  --warning-text: #b45309;
+  --danger: #dc2626;
+  --danger-soft: #fdeeee;
+  --danger-text: #b91c1c;
+  --info: #0891b2;
+  --info-soft: #e6f6fa;
+  --info-text: #0e7490;
+  /* everything an AI agent did or does */
+  --ai: #7c3aed;
+  --ai-soft: #f3efff;
+  --ai-text: #6d28d9;
+
+  --shadow-sm: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --shadow-md: 0 4px 14px rgba(17, 24, 39, 0.08);
+  --shadow-lg: 0 16px 40px rgba(17, 24, 39, 0.16);
+  --overlay: rgba(17, 24, 39, 0.45);
+
+  --sidebar-width: 220px;
+  --sidebar-collapsed: 60px;
+  --page-max: 1120px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1015;
+  --surface: #161920;
+  --surface-2: #1c2028;
+  --surface-hover: #1f242d;
+  --surface-selected: #1c2740;
+  --border: #2a2f39;
+  --border-strong: #3a414d;
+  --text: #f1f3f6;
+  --text-2: #c3c9d3;
+  --text-3: #8e96a4;
+
+  --accent: #4d8dff;
+  --accent-hover: #6aa0ff;
+  --accent-soft: #172440;
+  --accent-text: #8ab4ff;
+  --success: #34c46b;
+  --success-soft: #11291c;
+  --success-text: #5fd68d;
+  --warning: #f0a33a;
+  --warning-soft: #2e2311;
+  --warning-text: #f5bd6b;
+  --danger: #f2615d;
+  --danger-soft: #331615;
+  --danger-text: #ff8a85;
+  --info: #3bbfd9;
+  --info-soft: #102a31;
+  --info-text: #6fd3e6;
+  --ai: #a07bff;
+  --ai-soft: #231b3d;
+  --ai-text: #c0a6ff;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 18px 44px rgba(0, 0, 0, 0.6);
+  --overlay: rgba(0, 0, 0, 0.6);
+}
+
+/* ---- base elements ---- */
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-md);
+  line-height: 1.45;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
+  line-height: 1.25;
+  font-family: var(--font-display);
+}
+
+a {
+  color: var(--accent-text);
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}

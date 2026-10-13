@@ -1,0 +1,24 @@
+{
+  "requirements": [
+    {
+      "id": "shop-1-name-of-the-items-added-to-the-cart-product",
+      "title": "SHOP-1  - Name of the items added to the cart (products page) are the same in the cart view",
+      "text": "",
+      "useCaseId": "review-the-cart",
+      "criteria": [
+        {
+          "id": "ac-1",
+          "text": "The item name added to the cart in the catalog is the same as the item we have in the cart.",
+          "caseIds": [
+            "case-the-product-added-from-the-catalog-appears-in-the-cart-with-",
+            "case-every-product-added-from-the-catalog-appears-in-the-cart-und"
+          ]
+        }
+      ],
+      "source": "pasted",
+      "createdAt": "2026-10-08T04:12:18.139Z",
+      "updatedAt": "2026-10-08T04:14:35.428Z"
+    }
+  ],
+  "updatedAt": "2026-10-08T04:14:35.464Z"
+}

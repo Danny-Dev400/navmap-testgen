@@ -1,0 +1,54 @@
+{
+  "name": "testsprite-copy",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "app"
+  ],
+  "scripts": {
+    "report": "tsx scripts/render-report.ts",
+    "report:map": "tsx scripts/render-map.ts",
+    "build:map": "npm run build --prefix app",
+    "dashboard": "npm run dev --prefix app",
+    "navmap:id": "tsx scripts/navmap-id.ts",
+    "navmap:merge": "tsx scripts/merge-navmap.ts",
+    "report:navmap": "tsx scripts/render-navmap.ts",
+    "report:navmap-coverage": "tsx scripts/render-navmap-coverage.ts",
+    "export:manual": "tsx scripts/navmap-export-manual.ts",
+    "navmap:generate-tests": "tsx scripts/generate-navmap-tests.ts",
+    "navmap:cases:baseline": "tsx scripts/navmap-cases-baseline.ts",
+    "navmap:snapshots": "tsx scripts/navmap-snapshots.ts",
+    "navmap:snapshot": "tsx scripts/navmap-snapshot.ts",
+    "navmap:design-context": "tsx scripts/navmap-design-context.ts",
+    "navmap:save-design": "tsx scripts/navmap-save-design.ts",
+    "navmap:organize-context": "tsx scripts/navmap-organize-context.ts",
+    "navmap:save-features": "tsx scripts/navmap-save-features.ts",
+    "navmap:triage-context": "tsx scripts/navmap-triage-context.ts",
+    "navmap:test-data": "tsx scripts/navmap-test-data.ts",
+    "navmap:save-triage": "tsx scripts/navmap-save-triage.ts",
+    "navmap:auth-setup": "tsx scripts/navmap-auth-setup.ts",
+    "navmap:link-candidates": "tsx scripts/navmap-link-candidates.ts",
+    "navmap:save-links": "tsx scripts/navmap-save-links.ts",
+    "navmap:state-candidates": "tsx scripts/navmap-state-candidates.ts",
+    "navmap:save-states": "tsx scripts/navmap-save-states.ts",
+    "navmap:ask": "tsx scripts/navmap-ask.ts",
+    "navmap:requirements-context": "tsx scripts/navmap-requirements-context.ts",
+    "navmap:save-requirement-analysis": "tsx scripts/navmap-save-requirement-analysis.ts",
+    "navmap:run-id": "tsx scripts/navmap-run-id.ts",
+    "navmap:finalize-shot": "tsx scripts/navmap-finalize-shot.ts",
+    "migrate:projects": "tsx scripts/migrate-to-projects.ts"
+  },
+  "dependencies": {
+    "@playwright/mcp": "^0.0.83",
+    "nanoid": "^5.0.9",
+    "playwright": "^1.63.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

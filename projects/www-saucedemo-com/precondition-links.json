@@ -1,0 +1,198 @@
+{
+  "links": [
+    {
+      "edgeId": "cart-html__start-checkout__checkout-step-one-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart, which survives navigation to the cart page."
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart."
+    },
+    {
+      "edgeId": "checkout-step-two-html__finish-order__checkout-complete-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart."
+    },
+    {
+      "edgeId": "checkout-step-two-html__finish-order__checkout-complete-html",
+      "precondition": "shipping information must have been submitted",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "The only producing action is 'Submit shipping information', but it needs First Name, Last Name and Zip filled in first and no fill actions were recorded; chaining the bare Continue click would fail validation."
+    },
+    {
+      "edgeId": "inventory-html__expand-dynamic-catalog-submenu__inventory-html",
+      "precondition": "side menu must be open",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "inventory-html__open-side-menu__inventory-html"
+      ],
+      "rationale": "Opening the burger menu is what makes the side menu visible."
+    },
+    {
+      "edgeId": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+      "precondition": "side menu must be open",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "inventory-html__open-side-menu__inventory-html"
+      ],
+      "rationale": "Opening the burger menu is what makes the side menu visible."
+    },
+    {
+      "edgeId": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "inventory-html__expand-dynamic-catalog-submenu__inventory-html"
+      ],
+      "rationale": "Clicking the Dynamic Catalog menu button reveals the Lazy Load submenu entry; its own menu-open prerequisite is expanded recursively."
+    },
+    {
+      "edgeId": "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+      "precondition": "side menu must be open",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "The only recorded way to open the side menu was captured on the Products page; the map has no shared navbar component on this Dynamic Catalog page, so it cannot be performed here. Re-running /navmap on this page to record its menu button would resolve it."
+    },
+    {
+      "edgeId": "dynamic-catalog-lazy-load-html__open-dynamic-catalog-spinner__dynamic-catalog-spinner-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "Expanding the submenu requires the side menu to be open first, and no recorded action can open it on this Dynamic Catalog page."
+    },
+    {
+      "edgeId": "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html",
+      "precondition": "side menu must be open",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "The only recorded way to open the side menu was captured on the Products page; the map has no shared navbar component on this Dynamic Catalog page, so it cannot be performed here. Re-running /navmap on this page to record its menu button would resolve it."
+    },
+    {
+      "edgeId": "dynamic-catalog-spinner-html__open-dynamic-catalog-slider__dynamic-catalog-slider-html",
+      "precondition": "Dynamic Catalog submenu must be expanded",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "Expanding the submenu requires the side menu to be open first, and no recorded action can open it on this Dynamic Catalog page."
+    },
+    {
+      "edgeId": "dynamic-catalog-slider-html__open-all-items-from-menu__inventory-html",
+      "precondition": "side menu must be open",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "The only recorded way to open the side menu was captured on the Products page; the map has no shared navbar component on this Dynamic Catalog page, so it cannot be performed here. Re-running /navmap on this page to record its menu button would resolve it."
+    },
+    {
+      "edgeId": "inventory-html__open-about-page__inventory-html",
+      "precondition": "side menu must be open",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "inventory-html__open-side-menu__inventory-html"
+      ],
+      "rationale": "Opening the burger menu is what makes the side menu visible."
+    },
+    {
+      "edgeId": "inventory-html__log-out__home",
+      "precondition": "side menu must be open",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "inventory-html__open-side-menu__inventory-html"
+      ],
+      "rationale": "Opening the burger menu is what makes the Logout link visible."
+    },
+    {
+      "edgeId": "cart-html__remove-item-from-cart__cart-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart, which survives navigation to the cart page.",
+      "shareItem": true
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart."
+    },
+    {
+      "edgeId": "checkout-step-one-html__dismiss-form-error__checkout-step-one-html",
+      "precondition": "a validation error must be displayed",
+      "status": "linked",
+      "scope": "same-page",
+      "setupEdgeIds": [
+        "checkout-step-one-html__submit-incomplete-shipping-information__checkout-step-one-html"
+      ],
+      "rationale": "Clicking Continue with all fields empty raises the validation error banner without navigating; its own cart precondition is expanded recursively."
+    },
+    {
+      "edgeId": "checkout-step-one-html__cancel-checkout-information__cart-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart."
+    },
+    {
+      "edgeId": "checkout-step-two-html__cancel-checkout-overview__inventory-html",
+      "precondition": "cart must contain at least 1 item",
+      "status": "linked",
+      "scope": "persistent",
+      "setupEdgeIds": [
+        "inventory-html__add-item-to-cart__inventory-html"
+      ],
+      "rationale": "Adding an item on the products page puts it in the session-held cart."
+    },
+    {
+      "edgeId": "checkout-step-two-html__cancel-checkout-overview__inventory-html",
+      "precondition": "shipping information must have been submitted",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "The only producing action is 'Submit shipping information', but it needs First Name, Last Name and Zip filled in first and no fill actions were recorded; chaining the bare Continue click would fail validation."
+    },
+    {
+      "edgeId": "inventory-item-html__add-item-to-cart-from-product-detail__inventory-item-html",
+      "precondition": "the product must not already be in the cart",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "This is the default state of a fresh session; no recorded action produces it, and the only way to restore it (a Remove action) first needs the same specific product in the cart."
+    },
+    {
+      "edgeId": "inventory-item-html__remove-item-from-cart-on-product-detail__inventory-item-html",
+      "precondition": "the product must already be in the cart",
+      "status": "unresolvable",
+      "setupEdgeIds": [],
+      "rationale": "Adding from the detail page would work but is itself blocked by its 'not already in the cart' precondition (no action produces it). The Products page 'Add item to cart' isn't guaranteed to add the same product the detail page shows, so chaining it could test the wrong thing."
+    }
+  ]
+}

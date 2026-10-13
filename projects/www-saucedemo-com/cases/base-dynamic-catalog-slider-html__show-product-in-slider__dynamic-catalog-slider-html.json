@@ -1,0 +1,14 @@
+{
+  "id": "base-dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html",
+  "title": "Show product in slider",
+  "status": "approved",
+  "origin": "baseline",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "dynamic-catalog-slider-html__show-product-in-slider__dynamic-catalog-slider-html"
+    }
+  ],
+  "createdAt": "2026-10-06T19:53:41.187Z",
+  "updatedAt": "2026-10-06T19:53:41.187Z"
+}

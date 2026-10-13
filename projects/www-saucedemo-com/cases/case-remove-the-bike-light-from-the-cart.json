@@ -1,0 +1,15 @@
+{
+  "id": "case-remove-the-bike-light-from-the-cart",
+  "title": "Remove the Bike Light from the cart",
+  "status": "approved",
+  "origin": "manual",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "cart-html__remove-item-from-cart__cart-html",
+      "item": "Sauce Labs Bike Light"
+    }
+  ],
+  "createdAt": "2026-10-07T03:34:10.479Z",
+  "updatedAt": "2026-10-07T03:34:10.598Z"
+}

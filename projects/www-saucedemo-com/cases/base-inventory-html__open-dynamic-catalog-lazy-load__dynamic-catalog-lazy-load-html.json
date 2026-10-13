@@ -1,0 +1,14 @@
+{
+  "id": "base-inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html",
+  "title": "Open Dynamic Catalog Lazy Load",
+  "status": "approved",
+  "origin": "baseline",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__open-dynamic-catalog-lazy-load__dynamic-catalog-lazy-load-html"
+    }
+  ],
+  "createdAt": "2026-10-06T19:53:41.187Z",
+  "updatedAt": "2026-10-06T19:53:41.187Z"
+}

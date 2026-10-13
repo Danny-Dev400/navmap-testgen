@@ -1,0 +1,30 @@
+{
+  "id": "case-buy-a-bike-light-and-finish-checkout",
+  "title": "Buy a bike light and finish checkout",
+  "status": "approved",
+  "origin": "manual",
+  "requires": [],
+  "steps": [
+    {
+      "edgeId": "inventory-html__add-item-to-cart__inventory-html",
+      "item": "Sauce Labs Bike Light"
+    },
+    {
+      "edgeId": "inventory-html__open-cart__cart-html"
+    },
+    {
+      "edgeId": "cart-html__start-checkout__checkout-step-one-html"
+    },
+    {
+      "edgeId": "checkout-step-one-html__submit-shipping-information__checkout-step-two-html",
+      "form": {
+        "First Name": "Ana"
+      }
+    },
+    {
+      "edgeId": "checkout-step-two-html__finish-order__checkout-complete-html"
+    }
+  ],
+  "createdAt": "2026-10-06T19:54:44.564Z",
+  "updatedAt": "2026-10-06T19:54:53.392Z"
+}

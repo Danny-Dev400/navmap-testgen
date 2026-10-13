@@ -1,0 +1,1754 @@
+{
+  "id": "www-test-lab-ai",
+  "targetHost": "www.test-lab.ai",
+  "createdAt": "2026-10-05T14:24:20Z",
+  "updatedAt": "2026-10-05T16:34:10Z",
+  "totalRunsMerged": 2,
+  "entryPageId": "blog",
+  "runHistory": [
+    {
+      "runId": "KTPQOZnT_68Vy2eg416ug",
+      "mergedAt": "2026-10-05T14:35:13Z",
+      "pagesTouched": 17,
+      "edgesTouched": 31
+    },
+    {
+      "runId": "WMCgmQGENX--JADW_kFvQ",
+      "mergedAt": "2026-10-05T16:34:10Z",
+      "pagesTouched": 6,
+      "edgesTouched": 11
+    }
+  ],
+  "pages": {
+    "blog": {
+      "id": "blog",
+      "urlPattern": "/blog",
+      "title": "Blog Index",
+      "sampleUrls": [
+        "https://www.test-lab.ai/blog"
+      ],
+      "notes": "Paginated list of 10 post cards (image, date, title, tags). Page 1 lives at /blog; later pages at /blog/page/N.",
+      "group": "Blog",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-playwright-mcp-extension-token": {
+      "id": "blog-playwright-mcp-extension-token",
+      "urlPattern": "/blog/playwright-mcp-extension-token",
+      "title": "Blog Post",
+      "sampleUrls": [
+        "https://www.test-lab.ai/blog/playwright-mcp-extension-token"
+      ],
+      "notes": "Representative article. Each post has its own slug URL, so the id helper treats every post as a separate page; this one stands in for all. Has in-page TOC anchors, code blocks with 'Copy Text', related-post links, and a 'Get Started Free' CTA to /admin.",
+      "group": "Blog",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-page-id": {
+      "id": "blog-page-id",
+      "urlPattern": "/blog/page/:id",
+      "title": "Blog Index (Paginated)",
+      "sampleUrls": [
+        "https://www.test-lab.ai/blog/page/2"
+      ],
+      "notes": "Same layout as /blog plus a '← Previous' link. 7 pages observed.",
+      "group": "Blog",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "tools": {
+      "id": "tools",
+      "urlPattern": "/tools",
+      "title": "Free Tools Index",
+      "sampleUrls": [
+        "https://www.test-lab.ai/tools"
+      ],
+      "notes": "Card list of free tools; currently one tool (Browser test recorder).",
+      "group": "Free Tools",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "tools-browser-test-recorder": {
+      "id": "tools-browser-test-recorder",
+      "urlPattern": "/tools/browser-test-recorder",
+      "title": "Free Tool Detail (Browser Test Recorder)",
+      "sampleUrls": [
+        "https://www.test-lab.ai/tools/browser-test-recorder"
+      ],
+      "notes": "'Add to Chrome' links out to the Chrome Web Store. FAQ uses <details>/<summary> accordions.",
+      "group": "Free Tools",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "pricing": {
+      "id": "pricing",
+      "urlPattern": "/pricing",
+      "title": "Pricing Page",
+      "sampleUrls": [
+        "https://www.test-lab.ai/pricing"
+      ],
+      "notes": "Plans: Pay as you go / Scale / Custom. 'Get Started' and 'Upgrade to Scale' lead to signup/purchase and were deliberately not exercised. FAQ uses button accordions.",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "contact": {
+      "id": "contact",
+      "urlPattern": "/contact",
+      "title": "Contact Page",
+      "sampleUrls": [
+        "https://www.test-lab.ai/contact"
+      ],
+      "notes": "Book-a-demo (external Google Calendar), mailto link, and a Name/Email/Subject/Message form. 'Send Message' is disabled until all fields are filled. Form was never submitted.",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "features-plain-english-test-creation": {
+      "id": "features-plain-english-test-creation",
+      "urlPattern": "/features/plain-english-test-creation",
+      "title": "Feature Detail Page",
+      "sampleUrls": [
+        "https://www.test-lab.ai/features/plain-english-test-creation"
+      ],
+      "notes": "One of 9 feature pages listed in the navbar Features mega-menu; each has its own slug. CTAs: 'Try Free Demo' (/#try-demo), 'View Pricing'.",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "home": {
+      "id": "home",
+      "urlPattern": "/",
+      "title": "Home / Landing Page",
+      "sampleUrls": [
+        "https://www.test-lab.ai/",
+        "https://www.test-lab.ai/#try-demo"
+      ],
+      "notes": "Hero has a public demo widget: prompt textarea, Mode (Quick/Deep) and Agent selectors, example preset chips, 'Run Free Test' (3 anonymous runs, not exercised), 'See demo account' (enters a read-only demo of the app at /admin), 'Watch demo'.",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin": {
+      "id": "admin",
+      "urlPattern": "/admin",
+      "title": "App Dashboard (Demo Account)",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin"
+      ],
+      "notes": "Reached without signup via 'See demo account' (/api/demo/enter sets a demo session). Read-only: create/delete/save controls are disabled. Banner offers 'Sign up free' and 'Exit demo'. Some API calls return 403 in demo mode.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug",
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-projects": {
+      "id": "admin-projects",
+      "urlPattern": "/admin/projects",
+      "title": "Projects List",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/projects"
+      ],
+      "notes": "Project cards with View link, env count, test plan count. New Project / Delete disabled in demo.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-projects-id": {
+      "id": "admin-projects-id",
+      "urlPattern": "/admin/projects/:id",
+      "title": "Project Detail",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/projects/1374"
+      ],
+      "notes": "Project name (disabled), Environments (view opens a modal dialog), Integrations (Linear/Jira/GitHub Issues).",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs": {
+      "id": "admin-runs",
+      "urlPattern": "/admin/runs",
+      "title": "Runs List",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/runs",
+        "https://www.test-lab.ai/admin/runs?search=Homepage",
+        "https://www.test-lab.ai/admin/runs?build=44edefe"
+      ],
+      "notes": "Table of runs with clickable rows; search box writes ?search= to the URL; Filters button. Rows load asynchronously after the heading. Arriving from Builds adds ?build=<id> and a 'Build: <id>' filter chip with a 'Clear all' button.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 2,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug",
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-runs-id-results": {
+      "id": "admin-runs-id-results",
+      "urlPattern": "/admin/runs/:id/results",
+      "title": "Run Results Report",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/runs/b95c2433-b439-4e9f-8d8b-d005e4fca091/results"
+      ],
+      "notes": "Report: Prompt/Script toggle, criteria/steps/issues/screenshots anchors, expandable execution steps, Export (PDF/HTML/JSON/JUnit), attempt history links.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-test-plans": {
+      "id": "admin-test-plans",
+      "urlPattern": "/admin/test-plans",
+      "title": "Test Plans List",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/test-plans"
+      ],
+      "notes": "Search + Filters; 'New Test Plan' and 'Manage test data' disabled in demo.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "docs": {
+      "id": "docs",
+      "urlPattern": "/docs",
+      "title": "Documentation Index",
+      "sampleUrls": [
+        "https://www.test-lab.ai/docs"
+      ],
+      "notes": "Docs landing with a left sidebar of sections.",
+      "group": "Docs",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "docs-test-plans": {
+      "id": "docs-test-plans",
+      "urlPattern": "/docs/test-plans",
+      "title": "Docs Section Page",
+      "sampleUrls": [
+        "https://www.test-lab.ai/docs/test-plans"
+      ],
+      "notes": "Representative docs section; each section has its own slug.",
+      "group": "Docs",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-schedules": {
+      "id": "admin-schedules",
+      "urlPattern": "/admin/schedules",
+      "title": "Schedules List",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/schedules"
+      ],
+      "notes": "Table of cron schedules (name, cron + timezone, test plans/projects, last/next run, status, actions). Fully read-only in demo: every checkbox, status toggle and row action button is disabled and rows are not clickable, so there are no outgoing in-page actions.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-builds": {
+      "id": "admin-builds",
+      "urlPattern": "/admin/builds",
+      "title": "Builds List",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/builds",
+        "https://www.test-lab.ai/admin/builds?project=458",
+        "https://www.test-lab.ai/admin/builds?project=458&page=2"
+      ],
+      "notes": "Test runs grouped by build/commit id (25 per page, ~2.7k builds). 'Filters' reveals a searchable project picker (writes ?project=<id>); Previous/Next pagination writes ?page=N. Each row's 'View build <id>' link goes to /admin/runs?build=<id>.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-recordings": {
+      "id": "admin-recordings",
+      "urlPattern": "/admin/recordings",
+      "title": "Recordings (Beta)",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/recordings"
+      ],
+      "notes": "Lists flows captured with the Chrome extension's Record mode. In the demo it always shows the 'No recordings yet' empty state because GET /api/admin/recordings returns 403 for the demo session. Only link is 'Get the Chrome extension' (external Chrome Web Store, not followed).",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-whats-new": {
+      "id": "admin-whats-new",
+      "urlPattern": "/admin/whats-new",
+      "title": "What's New (Changelog)",
+      "requiresAuth": true,
+      "sampleUrls": [
+        "https://www.test-lab.ai/admin/whats-new"
+      ],
+      "notes": "Dated changelog entries (New feature / Beta badges); each entry is a button that expands inline to show an image, description, a docs/blog link, and a feedback email.",
+      "group": "Demo Admin",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    }
+  },
+  "edges": {
+    "blog__open-blog-post__blog-playwright-mcp-extension-token": {
+      "id": "blog__open-blog-post__blog-playwright-mcp-extension-token",
+      "fromPageId": "blog",
+      "toPageId": "blog-playwright-mcp-extension-token",
+      "semanticIntent": "Open blog post",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Post card 'PLAYWRIGHT_MCP_EXTENSION_TOKEN Explained'",
+      "locator": {
+        "strategy": "css",
+        "css": "main a[href^='/blog/']:has(article)"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /blog/<slug>",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Post title is visible as h1",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog__open-blog-post__blog-playwright-mcp-extension-token.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog__open-blog-post__blog-playwright-mcp-extension-token.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-playwright-mcp-extension-token__jump-to-article-section-from-table-of-contents__blog-playwright-mcp-extension-token": {
+      "id": "blog-playwright-mcp-extension-token__jump-to-article-section-from-table-of-contents__blog-playwright-mcp-extension-token",
+      "fromPageId": "blog-playwright-mcp-extension-token",
+      "toPageId": "blog-playwright-mcp-extension-token",
+      "semanticIntent": "Jump to article section from table of contents",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "TOC link 'What extension mode is, in one minute'",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "What extension mode is, in one minute"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL hash updates to the section anchor",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__jump-to-article-section-from-table-of-contents__blog-playwright-mcp-extension-token.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__jump-to-article-section-from-table-of-contents__blog-playwright-mcp-extension-token.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-playwright-mcp-extension-token__copy-code-snippet-to-clipboard__blog-playwright-mcp-extension-token": {
+      "id": "blog-playwright-mcp-extension-token__copy-code-snippet-to-clipboard__blog-playwright-mcp-extension-token",
+      "fromPageId": "blog-playwright-mcp-extension-token",
+      "toPageId": "blog-playwright-mcp-extension-token",
+      "semanticIntent": "Copy code snippet to clipboard",
+      "intentCategory": "other",
+      "action": "click",
+      "target": "Copy Text button on code block",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Copy Text"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Button label changes to 'Copied Text'",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__copy-code-snippet-to-clipboard__blog-playwright-mcp-extension-token.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__copy-code-snippet-to-clipboard__blog-playwright-mcp-extension-token.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-playwright-mcp-extension-token__return-to-blog-index__blog": {
+      "id": "blog-playwright-mcp-extension-token__return-to-blog-index__blog",
+      "fromPageId": "blog-playwright-mcp-extension-token",
+      "toPageId": "blog",
+      "semanticIntent": "Return to blog index",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "← Back to all posts",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "← Back to all posts"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /blog",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__return-to-blog-index__blog.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog-playwright-mcp-extension-token__return-to-blog-index__blog.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog__go-to-next-page-of-blog-posts__blog-page-id": {
+      "id": "blog__go-to-next-page-of-blog-posts__blog-page-id",
+      "fromPageId": "blog",
+      "toPageId": "blog-page-id",
+      "semanticIntent": "Go to next page of blog posts",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Next →",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Next →"
+      },
+      "uiRegion": "blog-pagination",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /blog/page/2",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'← Previous' link visible",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog__go-to-next-page-of-blog-posts__blog-page-id.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog__go-to-next-page-of-blog-posts__blog-page-id.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog-page-id__go-to-previous-page-of-blog-posts__blog": {
+      "id": "blog-page-id__go-to-previous-page-of-blog-posts__blog",
+      "fromPageId": "blog-page-id",
+      "toPageId": "blog",
+      "semanticIntent": "Go to previous page of blog posts",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "← Previous",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "← Previous"
+      },
+      "uiRegion": "blog-pagination",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /blog",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog-page-id__go-to-previous-page-of-blog-posts__blog.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog-page-id__go-to-previous-page-of-blog-posts__blog.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog__toggle-color-theme__blog": {
+      "id": "blog__toggle-color-theme__blog",
+      "fromPageId": "blog",
+      "toPageId": "blog",
+      "semanticIntent": "Toggle color theme",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Toggle theme button",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Toggle theme"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Page switches between light and dark color scheme",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog__toggle-color-theme__blog.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog__toggle-color-theme__blog.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog__go-to-free-tools__tools": {
+      "id": "blog__go-to-free-tools__tools",
+      "fromPageId": "blog",
+      "toPageId": "tools",
+      "semanticIntent": "Go to Free Tools",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Free Tools",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Free Tools"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /tools",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog__go-to-free-tools__tools.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog__go-to-free-tools__tools.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "tools__open-free-tool-detail__tools-browser-test-recorder": {
+      "id": "tools__open-free-tool-detail__tools-browser-test-recorder",
+      "fromPageId": "tools",
+      "toPageId": "tools-browser-test-recorder",
+      "semanticIntent": "Open free tool detail",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Browser test recorder card",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Free Chrome Browser test recorder"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /tools/browser-test-recorder",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Heading 'Free browser test recorder for Chrome' visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/tools__open-free-tool-detail__tools-browser-test-recorder.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/tools__open-free-tool-detail__tools-browser-test-recorder.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "tools-browser-test-recorder__expand-faq-answer__tools-browser-test-recorder": {
+      "id": "tools-browser-test-recorder__expand-faq-answer__tools-browser-test-recorder",
+      "fromPageId": "tools-browser-test-recorder",
+      "toPageId": "tools-browser-test-recorder",
+      "semanticIntent": "Expand FAQ answer",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "FAQ 'Is the browser test recorder free?'",
+      "locator": {
+        "strategy": "css",
+        "css": "summary:has-text('Is the browser test recorder free?')"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Answer paragraph appears below the question",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/tools-browser-test-recorder__expand-faq-answer__tools-browser-test-recorder.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/tools-browser-test-recorder__expand-faq-answer__tools-browser-test-recorder.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "tools-browser-test-recorder__go-to-pricing__pricing": {
+      "id": "tools-browser-test-recorder__go-to-pricing__pricing",
+      "fromPageId": "tools-browser-test-recorder",
+      "toPageId": "pricing",
+      "semanticIntent": "Go to Pricing",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Pricing",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Pricing"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /pricing",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/tools-browser-test-recorder__go-to-pricing__pricing.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/tools-browser-test-recorder__go-to-pricing__pricing.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "pricing__expand-faq-answer__pricing": {
+      "id": "pricing__expand-faq-answer__pricing",
+      "fromPageId": "pricing",
+      "toPageId": "pricing",
+      "semanticIntent": "Expand FAQ answer",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "FAQ 'How do credits work?'",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "How do credits work?"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Answer about credits becomes visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/pricing__expand-faq-answer__pricing.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/pricing__expand-faq-answer__pricing.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "pricing__go-to-contact-page__contact": {
+      "id": "pricing__go-to-contact-page__contact",
+      "fromPageId": "pricing",
+      "toPageId": "contact",
+      "semanticIntent": "Go to Contact page",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Contact Us (Need more? section)",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Contact Us",
+        "exact": true
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /contact",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Heading 'Get in Touch' visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/pricing__go-to-contact-page__contact.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/pricing__go-to-contact-page__contact.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "contact__fill-contact-form__contact": {
+      "id": "contact__fill-contact-form__contact",
+      "fromPageId": "contact",
+      "toPageId": "contact",
+      "semanticIntent": "Fill contact form",
+      "intentCategory": "form_submit",
+      "action": "fill",
+      "target": "Name, Email, Subject, Message",
+      "inputValue": "Navmap Test / navmap@example.com / Test subject / Test message (not submitted)",
+      "locator": {
+        "strategy": "role",
+        "role": "textbox",
+        "name": "Message"
+      },
+      "preconditions": [
+        "Form intentionally NOT submitted: 'Send Message' would contact the company"
+      ],
+      "postconditions": [
+        {
+          "description": "'Send Message' button becomes enabled once all fields are filled",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "partial",
+      "screenshot": "projects/www-test-lab-ai/screenshots/contact__fill-contact-form__contact.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/contact__fill-contact-form__contact.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "blog__open-feature-page-from-features-menu__features-plain-english-test-creation": {
+      "id": "blog__open-feature-page-from-features-menu__features-plain-english-test-creation",
+      "fromPageId": "blog",
+      "toPageId": "features-plain-english-test-creation",
+      "semanticIntent": "Open feature page from Features menu",
+      "intentCategory": "navigation",
+      "action": "hover+click",
+      "target": "Features > Plain-English Test Creation",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Plain-English Test Creation"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [
+        "Hover the 'Features' navbar link to open the mega-menu"
+      ],
+      "postconditions": [
+        {
+          "description": "URL is /features/<slug>",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/blog__open-feature-page-from-features-menu__features-plain-english-test-creation.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/blog__open-feature-page-from-features-menu__features-plain-english-test-creation.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "features-plain-english-test-creation__try-free-demo__home": {
+      "id": "features-plain-english-test-creation__try-free-demo__home",
+      "fromPageId": "features-plain-english-test-creation",
+      "toPageId": "home",
+      "semanticIntent": "Try free demo",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Try Free Demo",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Try Free Demo"
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /#try-demo and demo widget is visible",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/features-plain-english-test-creation__try-free-demo__home.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/features-plain-english-test-creation__try-free-demo__home.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "home__load-example-test-prompt__home": {
+      "id": "home__load-example-test-prompt__home",
+      "fromPageId": "home",
+      "toPageId": "home",
+      "semanticIntent": "Load example test prompt",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Example chip 'GitHub search'",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "GitHub search"
+      },
+      "uiRegion": "demo-widget",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Prompt textarea is filled with the example text",
+          "assertionType": "value_equals"
+        },
+        {
+          "description": "'Run Free Test' becomes enabled",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/home__load-example-test-prompt__home.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/home__load-example-test-prompt__home.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "home__select-demo-test-mode__home": {
+      "id": "home__select-demo-test-mode__home",
+      "fromPageId": "home",
+      "toPageId": "home",
+      "semanticIntent": "Select demo test mode",
+      "intentCategory": "update",
+      "action": "click",
+      "target": "Mode dropdown > Deep",
+      "inputValue": "Deep",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Deep Thorough multi-path testing"
+      },
+      "uiRegion": "demo-widget",
+      "preconditions": [
+        "Open the Mode dropdown (button 'Quick') first"
+      ],
+      "postconditions": [
+        {
+          "description": "Deep is gated: mode stays 'Quick' and a 'Deep mode is not available in the demo... Sign Up Free' banner appears",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "partial",
+      "screenshot": "projects/www-test-lab-ai/screenshots/home__select-demo-test-mode__home.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/home__select-demo-test-mode__home.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "home__enter-demo-account__admin": {
+      "id": "home__enter-demo-account__admin",
+      "fromPageId": "home",
+      "toPageId": "admin",
+      "semanticIntent": "Enter demo account",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "See demo account",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "See demo account"
+      },
+      "uiRegion": "demo-widget",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "Redirects via /api/demo/enter to /admin",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Dashboard heading and 'Exit demo' link visible",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/home__enter-demo-account__admin.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/home__enter-demo-account__admin.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin__go-to-projects__admin-projects": {
+      "id": "admin__go-to-projects__admin-projects",
+      "fromPageId": "admin",
+      "toPageId": "admin-projects",
+      "semanticIntent": "Go to Projects",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Projects",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Projects",
+        "exact": true
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/projects",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin__go-to-projects__admin-projects.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin__go-to-projects__admin-projects.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-projects__open-project-detail__admin-projects-id": {
+      "id": "admin-projects__open-project-detail__admin-projects-id",
+      "fromPageId": "admin-projects",
+      "toPageId": "admin-projects-id",
+      "semanticIntent": "Open project detail",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "View Test-Lab.ai - Admin [Demoaccount]",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "View Test-Lab.ai - Admin [Demoaccount]"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/projects/<id>",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-projects__open-project-detail__admin-projects-id.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-projects__open-project-detail__admin-projects-id.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-projects-id__view-environment-details__admin-projects-id": {
+      "id": "admin-projects-id__view-environment-details__admin-projects-id",
+      "fromPageId": "admin-projects-id",
+      "toPageId": "admin-projects-id",
+      "semanticIntent": "View environment details",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "View prod environment",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "View prod environment"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "'Environment' dialog opens with Close button",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-projects-id__view-environment-details__admin-projects-id.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-projects-id__view-environment-details__admin-projects-id.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-projects-id__go-to-runs__admin-runs": {
+      "id": "admin-projects-id__go-to-runs__admin-runs",
+      "fromPageId": "admin-projects-id",
+      "toPageId": "admin-runs",
+      "semanticIntent": "Go to Runs",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Runs",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Runs"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/runs",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Runs table loads",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-projects-id__go-to-runs__admin-runs.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-projects-id__go-to-runs__admin-runs.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs__search-runs-by-test-plan-name__admin-runs": {
+      "id": "admin-runs__search-runs-by-test-plan-name__admin-runs",
+      "fromPageId": "admin-runs",
+      "toPageId": "admin-runs",
+      "semanticIntent": "Search runs by test plan name",
+      "intentCategory": "search_filter",
+      "action": "fill",
+      "target": "Search by test plan name…",
+      "inputValue": "Homepage",
+      "locator": {
+        "strategy": "role",
+        "role": "textbox",
+        "name": "Search by test plan name…"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL gains ?search=Homepage",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Table shows only matching runs",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs__search-runs-by-test-plan-name__admin-runs.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs__search-runs-by-test-plan-name__admin-runs.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs__open-run-results__admin-runs-id-results": {
+      "id": "admin-runs__open-run-results__admin-runs-id-results",
+      "fromPageId": "admin-runs",
+      "toPageId": "admin-runs-id-results",
+      "semanticIntent": "Open run results",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "Run row 'Homepage - Demo prompt'",
+      "locator": {
+        "strategy": "role",
+        "role": "row",
+        "name": "failed Homepage - Demo prompt"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/runs/<uuid>/results",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'Test Results' heading visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs__open-run-results__admin-runs-id-results.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs__open-run-results__admin-runs-id-results.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs-id-results__expand-test-execution-step__admin-runs-id-results": {
+      "id": "admin-runs-id-results__expand-test-execution-step__admin-runs-id-results",
+      "fromPageId": "admin-runs-id-results",
+      "toPageId": "admin-runs-id-results",
+      "semanticIntent": "Expand test execution step",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "Step 3 'Wait for the demo run to complete...'",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "3 Wait for the demo run to"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Step expands showing Expected/Actual detail",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__expand-test-execution-step__admin-runs-id-results.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__expand-test-execution-step__admin-runs-id-results.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs-id-results__switch-test-definition-view__admin-runs-id-results": {
+      "id": "admin-runs-id-results__switch-test-definition-view__admin-runs-id-results",
+      "fromPageId": "admin-runs-id-results",
+      "toPageId": "admin-runs-id-results",
+      "semanticIntent": "Switch test definition view",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Script",
+      "inputValue": "Script",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Script"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Generated Playwright code with 'Copy code' button is shown instead of the prompt",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__switch-test-definition-view__admin-runs-id-results.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__switch-test-definition-view__admin-runs-id-results.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-runs-id-results__go-to-test-plans__admin-test-plans": {
+      "id": "admin-runs-id-results__go-to-test-plans__admin-test-plans",
+      "fromPageId": "admin-runs-id-results",
+      "toPageId": "admin-test-plans",
+      "semanticIntent": "Go to Test Plans",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Test Plans",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Test Plans"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/test-plans",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__go-to-test-plans__admin-test-plans.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs-id-results__go-to-test-plans__admin-test-plans.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin-test-plans__exit-demo-account__home": {
+      "id": "admin-test-plans__exit-demo-account__home",
+      "fromPageId": "admin-test-plans",
+      "toPageId": "home",
+      "semanticIntent": "Exit demo account",
+      "intentCategory": "auth",
+      "action": "click",
+      "target": "Exit demo",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Exit demo"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Redirects via /api/demo/exit to /",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-test-plans__exit-demo-account__home.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-test-plans__exit-demo-account__home.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "home__go-to-docs__docs": {
+      "id": "home__go-to-docs__docs",
+      "fromPageId": "home",
+      "toPageId": "docs",
+      "semanticIntent": "Go to Docs",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Docs",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Docs"
+      },
+      "uiRegion": "navbar",
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /docs",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/home__go-to-docs__docs.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/home__go-to-docs__docs.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "docs__open-docs-section__docs-test-plans": {
+      "id": "docs__open-docs-section__docs-test-plans",
+      "fromPageId": "docs",
+      "toPageId": "docs-test-plans",
+      "semanticIntent": "Open docs section",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "Docs sidebar 'Test Plans'",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Test Plans",
+        "exact": true
+      },
+      "preconditions": [],
+      "postconditions": [
+        {
+          "description": "URL is /docs/<section>",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/docs__open-docs-section__docs-test-plans.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/docs__open-docs-section__docs-test-plans.before.png",
+      "firstSeenAt": "2026-10-05T14:35:13Z",
+      "lastVerifiedAt": "2026-10-05T14:35:13Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "KTPQOZnT_68Vy2eg416ug"
+      ]
+    },
+    "admin__go-to-schedules__admin-schedules": {
+      "id": "admin__go-to-schedules__admin-schedules",
+      "fromPageId": "admin",
+      "toPageId": "admin-schedules",
+      "semanticIntent": "Go to Schedules",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Schedules",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Schedules"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/schedules",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Schedules table with cron expressions visible",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin__go-to-schedules__admin-schedules.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin__go-to-schedules__admin-schedules.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-schedules__go-to-builds__admin-builds": {
+      "id": "admin-schedules__go-to-builds__admin-builds",
+      "fromPageId": "admin-schedules",
+      "toPageId": "admin-builds",
+      "semanticIntent": "Go to Builds",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Builds",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Builds"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/builds",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Builds table loads",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-schedules__go-to-builds__admin-builds.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-schedules__go-to-builds__admin-builds.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-builds__open-filter-panel__admin-builds": {
+      "id": "admin-builds__open-filter-panel__admin-builds",
+      "fromPageId": "admin-builds",
+      "toPageId": "admin-builds",
+      "semanticIntent": "Open filter panel",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Filters",
+      "locator": {
+        "strategy": "testId",
+        "testId": "filter-bar-toggle"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Filters button becomes expanded and an 'All projects' picker appears",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-builds__open-filter-panel__admin-builds.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-builds__open-filter-panel__admin-builds.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-builds__filter-builds-by-project__admin-builds": {
+      "id": "admin-builds__filter-builds-by-project__admin-builds",
+      "fromPageId": "admin-builds",
+      "toPageId": "admin-builds",
+      "semanticIntent": "Filter builds by project",
+      "intentCategory": "search_filter",
+      "action": "click",
+      "target": "Project picker > Test-Lab.ai - Website",
+      "inputValue": "Test-Lab.ai - Website",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Test-Lab.ai - Website"
+      },
+      "preconditions": [
+        "Filter panel open (Filters button)",
+        "Open the 'All projects' picker"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL gains ?project=<id>",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "Count drops (2724 -> 696 builds) and rows show only that project",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-builds__filter-builds-by-project__admin-builds.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-builds__filter-builds-by-project__admin-builds.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-builds__go-to-next-page-of-builds__admin-builds": {
+      "id": "admin-builds__go-to-next-page-of-builds__admin-builds",
+      "fromPageId": "admin-builds",
+      "toPageId": "admin-builds",
+      "semanticIntent": "Go to next page of builds",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Next",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Next"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL gains page=2",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'Showing 26-50 of N builds' / 'Page 2 of M' visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-builds__go-to-next-page-of-builds__admin-builds.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-builds__go-to-next-page-of-builds__admin-builds.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-builds__view-runs-for-build__admin-runs": {
+      "id": "admin-builds__view-runs-for-build__admin-runs",
+      "fromPageId": "admin-builds",
+      "toPageId": "admin-runs",
+      "semanticIntent": "View runs for build",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "View build 44edefe",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "View build 44edefe"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/runs?build=<id>",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'Build: <id>' filter chip shown on Runs",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-builds__view-runs-for-build__admin-runs.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-builds__view-runs-for-build__admin-runs.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-runs__clear-all-run-filters__admin-runs": {
+      "id": "admin-runs__clear-all-run-filters__admin-runs",
+      "fromPageId": "admin-runs",
+      "toPageId": "admin-runs",
+      "semanticIntent": "Clear all run filters",
+      "intentCategory": "search_filter",
+      "action": "click",
+      "target": "Clear all",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Clear all"
+      },
+      "preconditions": [
+        "At least one run filter active (e.g. arrived from Builds)"
+      ],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Filter chip removed and URL returns to /admin/runs",
+          "assertionType": "url_matches"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs__clear-all-run-filters__admin-runs.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs__clear-all-run-filters__admin-runs.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-runs__go-to-recordings__admin-recordings": {
+      "id": "admin-runs__go-to-recordings__admin-recordings",
+      "fromPageId": "admin-runs",
+      "toPageId": "admin-recordings",
+      "semanticIntent": "Go to Recordings",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "Recordings Beta",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "Recordings Beta"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/recordings",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'No recordings yet' empty state (recordings API returns 403 in demo)",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-runs__go-to-recordings__admin-recordings.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-runs__go-to-recordings__admin-recordings.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-recordings__open-help-menu__admin-recordings": {
+      "id": "admin-recordings__open-help-menu__admin-recordings",
+      "fromPageId": "admin-recordings",
+      "toPageId": "admin-recordings",
+      "semanticIntent": "Open help menu",
+      "intentCategory": "state_toggle",
+      "action": "click",
+      "target": "Help",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Help"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Live Chat / WhatsApp / Email Us options appear under Help",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-recordings__open-help-menu__admin-recordings.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-recordings__open-help-menu__admin-recordings.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-recordings__go-to-what-s-new__admin-whats-new": {
+      "id": "admin-recordings__go-to-what-s-new__admin-whats-new",
+      "fromPageId": "admin-recordings",
+      "toPageId": "admin-whats-new",
+      "semanticIntent": "Go to What's new",
+      "intentCategory": "navigation",
+      "action": "click",
+      "target": "What's new",
+      "locator": {
+        "strategy": "role",
+        "role": "link",
+        "name": "What's new"
+      },
+      "uiRegion": "admin-sidebar",
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "URL is /admin/whats-new",
+          "assertionType": "url_matches"
+        },
+        {
+          "description": "'What's New' heading visible",
+          "assertionType": "text_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-recordings__go-to-what-s-new__admin-whats-new.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-recordings__go-to-what-s-new__admin-whats-new.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    },
+    "admin-whats-new__expand-changelog-entry__admin-whats-new": {
+      "id": "admin-whats-new__expand-changelog-entry__admin-whats-new",
+      "fromPageId": "admin-whats-new",
+      "toPageId": "admin-whats-new",
+      "semanticIntent": "Expand changelog entry",
+      "intentCategory": "read",
+      "action": "click",
+      "target": "Entry 'Record a test by clicking through it'",
+      "locator": {
+        "strategy": "role",
+        "role": "button",
+        "name": "Beta July 16, 2026 Record a"
+      },
+      "preconditions": [],
+      "requiresAuth": true,
+      "postconditions": [
+        {
+          "description": "Entry expands inline with image, description and 'Read the docs' link",
+          "assertionType": "element_visible"
+        }
+      ],
+      "lastOutcome": "success",
+      "screenshot": "projects/www-test-lab-ai/screenshots/admin-whats-new__expand-changelog-entry__admin-whats-new.png",
+      "screenshotBefore": "projects/www-test-lab-ai/screenshots/admin-whats-new__expand-changelog-entry__admin-whats-new.before.png",
+      "firstSeenAt": "2026-10-05T16:34:10Z",
+      "lastVerifiedAt": "2026-10-05T16:34:10Z",
+      "timesObserved": 1,
+      "sourceRunIds": [
+        "WMCgmQGENX--JADW_kFvQ"
+      ]
+    }
+  }
+}
